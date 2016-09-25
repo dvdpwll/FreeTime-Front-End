@@ -1,0 +1,7 @@
+<form {{action 'createSchedule' on='submit'}}>
+  {{input placeholder='Title' class='input-group form-control' value=newSchedule.title}}
+  {{input placeholder='Days of Week' class='input-group form-control' value=newSchedule.day}}
+  {{input placeholder='Start Time' class='input-group form-control' value=newSchedule.start}}
+  {{input placeholder='End Time' class='input-group form-control' value=newSchedule.end}}
+  <button type="submit" name="submit">Submit</button>
+</form>
