@@ -1,10 +1,10 @@
-<h2>Schedules</h2>
+<form {{action 'createSchedule' on='submit'}}>
+  {{input placeholder='Title' class='input-group form-control' value=newSchedule.title}}
+  {{input placeholder='Day of Week' class='input-group form-control' value=newSchedule.day}}
+  {{input placeholder='Start Time' class='input-group form-control' value=newSchedule.start}}
+  {{input placeholder='End Time' class='input-group form-control' value=newSchedule.end}}
+</form>
 
-<ul>
 {{#each model as |schedule|}}
-  <li>{{schedule.title}}</li>
-  <li>{{schedule.day}}</li>
-  <li>{{schedule.start}}</li>
-  <li>{{schedule.end}}</li>
+  {{schedule-card schedule=schedule}}
 {{/each}}
-</ul>
