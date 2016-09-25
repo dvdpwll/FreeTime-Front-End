@@ -11,6 +11,7 @@ Router.map(function () {
   this.route('change-password');
   this.route('users');
   this.route('schedules');
+  this.route('schedule/edit', { path: 'schedules/:schedule_id/edit' });
 });
 
 export default Router;

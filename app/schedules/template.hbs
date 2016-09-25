@@ -1,5 +1,5 @@
 {{new-schedule-form createSchedule='createSchedule'}}
 
 {{#each model as |schedule|}}
-  {{schedule-card schedule=schedule delete='deleteSchedule'}}
+  {{schedule-card schedule=schedule delete='deleteSchedule' edit='editSchedule'}}
 {{/each}}

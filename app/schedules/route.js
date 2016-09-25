@@ -5,6 +5,9 @@ export default Ember.Route.extend({
     return this.get('store').findAll('schedule');
   },
   actions: {
+    editSchedule (schedule) {
+      this.transitionTo('schedule/edit', schedule);
+    },
     deleteSchedule (schedule) {
       schedule.destroyRecord();
     },

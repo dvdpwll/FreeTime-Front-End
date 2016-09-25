@@ -1,6 +1,0 @@
-createItem () {
-      let data = this.get('newItem');
-      data.list = this.get('list'); //attach item to a list
-      this.sendAction('createItem', data);
-      this.set('newItem.content', null);
-    },
