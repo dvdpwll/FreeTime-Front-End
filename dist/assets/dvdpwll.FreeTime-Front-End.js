@@ -2608,7 +2608,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dvdpwll.FreeTime-Front-End/app")["default"].create({"name":"dvdpwll.FreeTime-Front-End","version":"0.0.0+0ea85d0a"});
+  require("dvdpwll.FreeTime-Front-End/app")["default"].create({"name":"dvdpwll.FreeTime-Front-End","version":"0.0.0+b5e40d1e"});
 }
 
 /* jshint ignore:end */
