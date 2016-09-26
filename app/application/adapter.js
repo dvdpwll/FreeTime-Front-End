@@ -1,9 +1,9 @@
 import Ember from 'ember';
 import ActiveModelAdapter from 'active-model-adapter';
-import ENV from 'FreeTime-Front-End/config/environment';
+// import ENV from 'FreeTime-Front-End/config/environment';
 
 export default ActiveModelAdapter.extend({
-  host: ENV.apiHost,
+  // host: ENV.apiHost,
   auth: Ember.inject.service(),
 
   headers: Ember.computed('auth.credentials.token', {
