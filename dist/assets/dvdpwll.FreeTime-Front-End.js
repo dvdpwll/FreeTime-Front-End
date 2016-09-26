@@ -6,9 +6,11 @@
 
 /* jshint ignore:end */
 
-define('dvdpwll.FreeTime-Front-End/ajax/service', ['exports', 'ember', 'ember-ajax/services/ajax', 'dvdpwll.FreeTime-Front-End/config/environment'], function (exports, _ember, _emberAjaxServicesAjax, _dvdpwllFreeTimeFrontEndConfigEnvironment) {
+define('dvdpwll.FreeTime-Front-End/ajax/service', ['exports', 'ember', 'ember-ajax/services/ajax'], function (exports, _ember, _emberAjaxServicesAjax) {
+  // import ENV from 'dvdpwll.FreeTime-Front-End/config/environment';
+
   exports['default'] = _emberAjaxServicesAjax['default'].extend({
-    host: _dvdpwllFreeTimeFrontEndConfigEnvironment['default'].apiHost,
+    // host: ENV.apiHost,
     auth: _ember['default'].inject.service(),
     headers: _ember['default'].computed('auth.credentials.token', {
       get: function get() {
@@ -39,9 +41,11 @@ define('dvdpwll.FreeTime-Front-End/app', ['exports', 'ember', 'dvdpwll.FreeTime-
 
   exports['default'] = App;
 });
-define('dvdpwll.FreeTime-Front-End/application/adapter', ['exports', 'ember', 'active-model-adapter', 'dvdpwll.FreeTime-Front-End/config/environment'], function (exports, _ember, _activeModelAdapter, _dvdpwllFreeTimeFrontEndConfigEnvironment) {
+define('dvdpwll.FreeTime-Front-End/application/adapter', ['exports', 'ember', 'active-model-adapter'], function (exports, _ember, _activeModelAdapter) {
+  // import ENV from 'dvdpwll.FreeTime-Front-End/config/environment';
+
   exports['default'] = _activeModelAdapter['default'].extend({
-    host: _dvdpwllFreeTimeFrontEndConfigEnvironment['default'].apiHost,
+    // host: ENV.apiHost,
     auth: _ember['default'].inject.service(),
 
     headers: _ember['default'].computed('auth.credentials.token', {
@@ -2608,7 +2612,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dvdpwll.FreeTime-Front-End/app")["default"].create({"name":"dvdpwll.FreeTime-Front-End","version":"0.0.0+b5e40d1e"});
+  require("dvdpwll.FreeTime-Front-End/app")["default"].create({"name":"dvdpwll.FreeTime-Front-End","version":"0.0.0+873d1c4f"});
 }
 
 /* jshint ignore:end */
