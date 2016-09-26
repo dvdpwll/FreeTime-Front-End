@@ -6,7 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
-    // apiHost: 'http://localhost:3000/',
+    apiHost: 'http://localhost:3000/',
     // apiHost: 'https://fathomless-coast-53196.herokuapp.com/',
     EmberENV: {
       FEATURES: {
@@ -42,9 +42,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // ENV.baseURL = '/';
-    // ENV.locationType = 'hash';
-    // ENV.apiHost = 'https://fathomless-coast-53196.herokuapp.com/'
+    ENV.baseURL = '/';
+    ENV.locationType = 'hash';
+    ENV.apiHost = 'https://fathomless-coast-53196.herokuapp.com/'
   }
 
   return ENV;
