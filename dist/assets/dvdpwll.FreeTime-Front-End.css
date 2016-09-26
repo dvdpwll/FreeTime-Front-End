@@ -6182,3 +6182,17 @@ button.close {
 
 .schedule-hidden :not(:first-child) {
   display: none; }
+
+.calendar {
+  background-color: #ffffff;
+  margin: auto; }
+
+.weekday {
+  border: 1px solid #000000;
+  min-height: 25px;
+  min-width: 100px; }
+
+.hour {
+  border: 1px solid #000000;
+  min-height: 25px;
+  min-width: 100px; }

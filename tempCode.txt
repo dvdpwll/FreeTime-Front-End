@@ -1,0 +1,253 @@
+my calendar
+<div class="container calendar text-center">
+        <div class="row weekdays">
+          <div class="col-md-1 weekday"></div>
+          <div class="col-md-1 weekday">Monday</div>
+          <div class="col-md-1 weekday">Tuesday</div>
+          <div class="col-md-1 weekday">Wednesday</div>
+          <div class="col-md-1 weekday">Thursday</div>
+          <div class="col-md-1 weekday">Friday</div>
+          <div class="col-md-1 weekday">Saturday</div>
+          <div class="col-md-1 weekday">Sunday</div>
+        </div>
+        <div class="row 0000">
+          <div class="col-md-1 hour">00:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 0100">
+          <div class="col-md-1 hour">01:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 0200">
+          <div class="col-md-1 hour">02:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 0300">
+          <div class="col-md-1 hour">03:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 0400">
+          <div class="col-md-1 hour">04:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 05:00">
+          <div class="col-md-1 hour">05:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 0600">
+          <div class="col-md-1 hour">06:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 0700">
+          <div class="col-md-1 hour">07:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 0800">
+          <div class="col-md-1 hour">08:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 0900">
+          <div class="col-md-1 hour">09:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 1000">
+          <div class="col-md-1 hour">10:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 1100">
+          <div class="col-md-1 hour">11:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 1200">
+          <div class="col-md-1 hour">12:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 1300">
+          <div class="col-md-1 hour">13:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 1400">
+          <div class="col-md-1 hour">14:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 1500">
+          <div class="col-md-1 hour">15:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 1600">
+          <div class="col-md-1 hour">16:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 1700">
+          <div class="col-md-1 hour">17:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 1800">
+          <div class="col-md-1 hour">18:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 1900">
+          <div class="col-md-1 hour">19:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 2000">
+          <div class="col-md-1 hour">20:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 2100">
+          <div class="col-md-1 hour">21:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 2200">
+          <div class="col-md-1 hour">22:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+        <div class="row 2300">
+          <div class="col-md-1 hour">23:00</div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+          <div class="col-md-1 hour"></div>
+        </div>
+      </div>
