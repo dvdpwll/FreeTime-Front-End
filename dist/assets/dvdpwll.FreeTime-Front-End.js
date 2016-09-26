@@ -6,9 +6,9 @@
 
 /* jshint ignore:end */
 
-define('dvdpwll.FreeTime-Front-End/ajax/service', ['exports', 'ember', 'ember-ajax/services/ajax', 'FreeTime-Front-End/config/environment'], function (exports, _ember, _emberAjaxServicesAjax, _FreeTimeFrontEndConfigEnvironment) {
+define('dvdpwll.FreeTime-Front-End/ajax/service', ['exports', 'ember', 'ember-ajax/services/ajax', 'dvdpwll.FreeTime-Front-End/config/environment'], function (exports, _ember, _emberAjaxServicesAjax, _dvdpwllFreeTimeFrontEndConfigEnvironment) {
   exports['default'] = _emberAjaxServicesAjax['default'].extend({
-    host: _FreeTimeFrontEndConfigEnvironment['default'].apiHost,
+    host: _dvdpwllFreeTimeFrontEndConfigEnvironment['default'].apiHost,
     auth: _ember['default'].inject.service(),
     headers: _ember['default'].computed('auth.credentials.token', {
       get: function get() {
@@ -39,9 +39,9 @@ define('dvdpwll.FreeTime-Front-End/app', ['exports', 'ember', 'dvdpwll.FreeTime-
 
   exports['default'] = App;
 });
-define('dvdpwll.FreeTime-Front-End/application/adapter', ['exports', 'ember', 'active-model-adapter', 'FreeTime-Front-End/config/environment'], function (exports, _ember, _activeModelAdapter, _FreeTimeFrontEndConfigEnvironment) {
+define('dvdpwll.FreeTime-Front-End/application/adapter', ['exports', 'ember', 'active-model-adapter', 'dvdpwll.FreeTime-Front-End/config/environment'], function (exports, _ember, _activeModelAdapter, _dvdpwllFreeTimeFrontEndConfigEnvironment) {
   exports['default'] = _activeModelAdapter['default'].extend({
-    host: _FreeTimeFrontEndConfigEnvironment['default'].apiHost,
+    host: _dvdpwllFreeTimeFrontEndConfigEnvironment['default'].apiHost,
     auth: _ember['default'].inject.service(),
 
     headers: _ember['default'].computed('auth.credentials.token', {

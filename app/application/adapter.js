@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import ActiveModelAdapter from 'active-model-adapter';
-import ENV from 'FreeTime-Front-End/config/environment';
+import ENV from 'dvdpwll.FreeTime-Front-End/config/environment';
 
 export default ActiveModelAdapter.extend({
   host: ENV.apiHost,
