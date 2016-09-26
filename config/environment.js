@@ -2,10 +2,12 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'ga-wdi-boston.ember-auth',
+    modulePrefix: 'dvdpwll.FreeTime-Front-End',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    apiHost: 'http://localhost:3000/',
+    // apiHost: 'https://fathomless-coast-53196.herokuapp.com/',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -40,7 +42,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = '/';
+    ENV.locationType = 'hash';
+    ENV.apiHost = 'https://fathomless-coast-53196.herokuapp.com/'
   }
 
   return ENV;
