@@ -204,6 +204,75 @@ define('dvdpwll.FreeTime-Front-End/auth/service', ['exports', 'ember', 'ember-lo
 define('dvdpwll.FreeTime-Front-End/auth/storage', ['exports', 'ember-local-storage/local/object'], function (exports, _emberLocalStorageLocalObject) {
   exports['default'] = _emberLocalStorageLocalObject['default'].extend({});
 });
+define('dvdpwll.FreeTime-Front-End/calendar/route', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Route.extend({});
+});
+define("dvdpwll.FreeTime-Front-End/calendar/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    return {
+      meta: {
+        "fragmentReason": {
+          "name": "missing-wrapper",
+          "problems": ["multiple-nodes", "wrong-type"]
+        },
+        "revision": "Ember@2.5.1",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 0
+          }
+        },
+        "moduleName": "dvdpwll.FreeTime-Front-End/calendar/template.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createElement("form");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("button");
+        dom.setAttribute(el2, "type", "submit");
+        dom.setAttribute(el2, "name", "submit");
+        var el3 = dom.createTextNode("Add Layer");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var element0 = dom.childAt(fragment, [0]);
+        var morphs = new Array(3);
+        morphs[0] = dom.createElementMorph(element0);
+        morphs[1] = dom.createMorphAt(element0, 1, 1);
+        morphs[2] = dom.createMorphAt(fragment, 2, 2, contextualElement);
+        return morphs;
+      },
+      statements: [["element", "action", ["addUser"], ["on", "submit"], ["loc", [null, [1, 6], [1, 38]]]], ["inline", "input", [], ["placeholder", "Username", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "newSchedule.title", ["loc", [null, [2, 72], [2, 89]]]]], [], []]], ["loc", [null, [2, 2], [2, 91]]]], ["content", "calendar-grid", ["loc", [null, [5, 0], [5, 17]]]]],
+      locals: [],
+      templates: []
+    };
+  })());
+});
 define('dvdpwll.FreeTime-Front-End/change-password/route', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     auth: _ember['default'].inject.service(),
@@ -288,6 +357,48 @@ define('dvdpwll.FreeTime-Front-End/components/app-version', ['exports', 'ember-c
     version: version,
     name: name
   });
+});
+define('dvdpwll.FreeTime-Front-End/components/calendar-grid/component', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Component.extend({});
+});
+define("dvdpwll.FreeTime-Front-End/components/calendar-grid/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    return {
+      meta: {
+        "fragmentReason": {
+          "name": "missing-wrapper",
+          "problems": ["empty-body"]
+        },
+        "revision": "Ember@2.5.1",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 1,
+            "column": 0
+          }
+        },
+        "moduleName": "dvdpwll.FreeTime-Front-End/components/calendar-grid/template.hbs"
+      },
+      isEmpty: true,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes() {
+        return [];
+      },
+      statements: [],
+      locals: [],
+      templates: []
+    };
+  })());
 });
 define('dvdpwll.FreeTime-Front-End/components/change-password-form/component', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
@@ -569,11 +680,11 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
               "source": null,
               "start": {
                 "line": 8,
-                "column": 12
+                "column": 14
               },
               "end": {
                 "line": 8,
-                "column": 37
+                "column": 39
               }
             },
             "moduleName": "dvdpwll.FreeTime-Front-End/components/my-application/template.hbs"
@@ -619,7 +730,7 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
         hasRendered: false,
         buildFragment: function buildFragment(dom) {
           var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("        ");
+          var el1 = dom.createTextNode("          ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("li");
           var el2 = dom.createComment("");
@@ -634,7 +745,7 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
           return morphs;
         },
-        statements: [["block", "link-to", ["users"], [], 0, null, ["loc", [null, [8, 12], [8, 49]]]]],
+        statements: [["block", "link-to", ["users"], [], 0, null, ["loc", [null, [8, 14], [8, 51]]]]],
         locals: [],
         templates: [child0]
       };
@@ -649,11 +760,11 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
               "source": null,
               "start": {
                 "line": 13,
-                "column": 12
+                "column": 14
               },
               "end": {
                 "line": 13,
-                "column": 44
+                "column": 49
               }
             },
             "moduleName": "dvdpwll.FreeTime-Front-End/components/my-application/template.hbs"
@@ -664,7 +775,7 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
           hasRendered: false,
           buildFragment: function buildFragment(dom) {
             var el0 = dom.createDocumentFragment();
-            var el1 = dom.createTextNode("Schedule");
+            var el1 = dom.createTextNode("My Schedule");
             dom.appendChild(el0, el1);
             return el0;
           },
@@ -685,11 +796,47 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
               "source": null,
               "start": {
                 "line": 14,
-                "column": 12
+                "column": 14
               },
               "end": {
                 "line": 14,
-                "column": 57
+                "column": 45
+              }
+            },
+            "moduleName": "dvdpwll.FreeTime-Front-End/components/my-application/template.hbs"
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("Calendar");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes() {
+            return [];
+          },
+          statements: [],
+          locals: [],
+          templates: []
+        };
+      })();
+      var child2 = (function () {
+        return {
+          meta: {
+            "fragmentReason": false,
+            "revision": "Ember@2.5.1",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 15,
+                "column": 14
+              },
+              "end": {
+                "line": 15,
+                "column": 59
               }
             },
             "moduleName": "dvdpwll.FreeTime-Front-End/components/my-application/template.hbs"
@@ -723,7 +870,7 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
               "column": 8
             },
             "end": {
-              "line": 16,
+              "line": 17,
               "column": 8
             }
           },
@@ -735,19 +882,25 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
         hasRendered: false,
         buildFragment: function buildFragment(dom) {
           var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("        ");
+          var el1 = dom.createTextNode("          ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("li");
           var el2 = dom.createComment("");
           dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n        ");
+          var el1 = dom.createTextNode("\n          ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("li");
           var el2 = dom.createComment("");
           dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n        ");
+          var el1 = dom.createTextNode("\n          ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("li");
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n          ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("li");
           var el2 = dom.createElement("a");
@@ -761,16 +914,17 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element0 = dom.childAt(fragment, [5, 0]);
-          var morphs = new Array(3);
+          var element0 = dom.childAt(fragment, [7, 0]);
+          var morphs = new Array(4);
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
           morphs[1] = dom.createMorphAt(dom.childAt(fragment, [3]), 0, 0);
-          morphs[2] = dom.createElementMorph(element0);
+          morphs[2] = dom.createMorphAt(dom.childAt(fragment, [5]), 0, 0);
+          morphs[3] = dom.createElementMorph(element0);
           return morphs;
         },
-        statements: [["block", "link-to", ["schedules"], [], 0, null, ["loc", [null, [13, 12], [13, 56]]]], ["block", "link-to", ["change-password"], [], 1, null, ["loc", [null, [14, 12], [14, 69]]]], ["element", "action", ["signOut"], [], ["loc", [null, [15, 24], [15, 44]]]]],
+        statements: [["block", "link-to", ["schedules"], [], 0, null, ["loc", [null, [13, 14], [13, 61]]]], ["block", "link-to", ["calendar"], [], 1, null, ["loc", [null, [14, 14], [14, 57]]]], ["block", "link-to", ["change-password"], [], 2, null, ["loc", [null, [15, 14], [15, 71]]]], ["element", "action", ["signOut"], [], ["loc", [null, [16, 26], [16, 46]]]]],
         locals: [],
-        templates: [child0, child1]
+        templates: [child0, child1, child2]
       };
     })();
     var child2 = (function () {
@@ -782,12 +936,12 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
             "loc": {
               "source": null,
               "start": {
-                "line": 17,
-                "column": 12
+                "line": 18,
+                "column": 14
               },
               "end": {
-                "line": 17,
-                "column": 41
+                "line": 18,
+                "column": 43
               }
             },
             "moduleName": "dvdpwll.FreeTime-Front-End/components/my-application/template.hbs"
@@ -818,12 +972,12 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
             "loc": {
               "source": null,
               "start": {
-                "line": 18,
-                "column": 12
+                "line": 19,
+                "column": 14
               },
               "end": {
-                "line": 18,
-                "column": 41
+                "line": 19,
+                "column": 43
               }
             },
             "moduleName": "dvdpwll.FreeTime-Front-End/components/my-application/template.hbs"
@@ -853,11 +1007,11 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
           "loc": {
             "source": null,
             "start": {
-              "line": 16,
+              "line": 17,
               "column": 8
             },
             "end": {
-              "line": 19,
+              "line": 20,
               "column": 8
             }
           },
@@ -869,13 +1023,13 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
         hasRendered: false,
         buildFragment: function buildFragment(dom) {
           var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("        ");
+          var el1 = dom.createTextNode("          ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("li");
           var el2 = dom.createComment("");
           dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n        ");
+          var el1 = dom.createTextNode("\n          ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("li");
           var el2 = dom.createComment("");
@@ -891,7 +1045,7 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
           morphs[1] = dom.createMorphAt(dom.childAt(fragment, [3]), 0, 0);
           return morphs;
         },
-        statements: [["block", "link-to", ["sign-up"], [], 0, null, ["loc", [null, [17, 12], [17, 53]]]], ["block", "link-to", ["sign-in"], [], 1, null, ["loc", [null, [18, 12], [18, 53]]]]],
+        statements: [["block", "link-to", ["sign-up"], [], 0, null, ["loc", [null, [18, 14], [18, 55]]]], ["block", "link-to", ["sign-in"], [], 1, null, ["loc", [null, [19, 14], [19, 55]]]]],
         locals: [],
         templates: [child0, child1]
       };
@@ -904,11 +1058,11 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
           "loc": {
             "source": null,
             "start": {
-              "line": 27,
+              "line": 28,
               "column": 0
             },
             "end": {
-              "line": 29,
+              "line": 30,
               "column": 0
             }
           },
@@ -933,7 +1087,7 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flash-message", [], ["flash", ["subexpr", "@mut", [["get", "flash", ["loc", [null, [28, 24], [28, 29]]]]], [], []]], ["loc", [null, [28, 2], [28, 31]]]]],
+        statements: [["inline", "flash-message", [], ["flash", ["subexpr", "@mut", [["get", "flash", ["loc", [null, [29, 24], [29, 29]]]]], [], []]], ["loc", [null, [29, 2], [29, 31]]]]],
         locals: ["flash"],
         templates: []
       };
@@ -952,7 +1106,7 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
             "column": 0
           },
           "end": {
-            "line": 34,
+            "line": 35,
             "column": 0
           }
         },
@@ -1046,7 +1200,7 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
         morphs[4] = dom.createMorphAt(dom.childAt(fragment, [6]), 1, 1);
         return morphs;
       },
-      statements: [["content", "navbar-header", ["loc", [null, [3, 4], [3, 21]]]], ["block", "if", [["get", "isAuthenticated", ["loc", [null, [7, 14], [7, 29]]]]], [], 0, null, ["loc", [null, [7, 8], [9, 15]]]], ["block", "if", [["get", "isAuthenticated", ["loc", [null, [12, 14], [12, 29]]]]], [], 1, 2, ["loc", [null, [12, 8], [19, 15]]]], ["block", "each", [["get", "flashMessages.queue", ["loc", [null, [27, 8], [27, 27]]]]], [], 3, null, ["loc", [null, [27, 0], [29, 9]]]], ["content", "outlet", ["loc", [null, [32, 2], [32, 12]]]]],
+      statements: [["content", "navbar-header", ["loc", [null, [3, 4], [3, 21]]]], ["block", "if", [["get", "isAuthenticated", ["loc", [null, [7, 14], [7, 29]]]]], [], 0, null, ["loc", [null, [7, 8], [9, 15]]]], ["block", "if", [["get", "isAuthenticated", ["loc", [null, [12, 14], [12, 29]]]]], [], 1, 2, ["loc", [null, [12, 8], [20, 15]]]], ["block", "each", [["get", "flashMessages.queue", ["loc", [null, [28, 8], [28, 27]]]]], [], 3, null, ["loc", [null, [28, 0], [30, 9]]]], ["content", "outlet", ["loc", [null, [33, 2], [33, 12]]]]],
       locals: [],
       templates: [child0, child1, child2, child3]
     };
@@ -2074,6 +2228,7 @@ define('dvdpwll.FreeTime-Front-End/router', ['exports', 'ember', 'dvdpwll.FreeTi
     this.route('users');
     this.route('schedules');
     this.route('schedule/edit', { path: 'schedules/:schedule_id/edit' });
+    this.route('calendar');
   });
 
   exports['default'] = Router;
@@ -2612,7 +2767,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dvdpwll.FreeTime-Front-End/app")["default"].create({"name":"dvdpwll.FreeTime-Front-End","version":"0.0.0+873d1c4f"});
+  require("dvdpwll.FreeTime-Front-End/app")["default"].create({"name":"dvdpwll.FreeTime-Front-End","version":"0.0.0+65fff808"});
 }
 
 /* jshint ignore:end */
