@@ -85,7 +85,7 @@ define('dvdpwll.FreeTime-Front-End/tests/components/calendar-grid/component.jshi
   QUnit.module('JSHint - components/calendar-grid/component.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'components/calendar-grid/component.js should pass jshint.');
+    assert.ok(false, 'components/calendar-grid/component.js should pass jshint.\ncomponents/calendar-grid/component.js: line 16, col 52, \'properties\' is defined but never used.\ncomponents/calendar-grid/component.js: line 16, col 40, \'occurrence\' is defined but never used.\ncomponents/calendar-grid/component.js: line 20, col 40, \'occurrence\' is defined but never used.\n\n3 errors');
   });
 });
 define('dvdpwll.FreeTime-Front-End/tests/components/change-password-form/component.jshint', ['exports'], function (exports) {
@@ -2293,7 +2293,7 @@ define('dvdpwll.FreeTime-Front-End/tests/schedule/model.jshint', ['exports'], fu
   QUnit.module('JSHint - schedule/model.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'schedule/model.js should pass jshint.');
+    assert.ok(false, 'schedule/model.js should pass jshint.\nschedule/model.js: line 52, col 24, Missing semicolon.\nschedule/model.js: line 106, col 24, Missing semicolon.\nschedule/model.js: line 11, col 13, \'Ember\' is not defined.\nschedule/model.js: line 65, col 11, \'Ember\' is not defined.\n\n4 errors');
   });
 });
 define('dvdpwll.FreeTime-Front-End/tests/schedule/route.jshint', ['exports'], function (exports) {

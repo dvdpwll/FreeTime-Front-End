@@ -1,24 +1,34 @@
-.calendar {
-  background-color: $pure-white;
-  // height: 250px;
-  margin: auto;
-  // max-width: 250px;
-}
+// .calendar {
+//   background-color: $pure-white;
+//   // height: 250px;
+//   margin: auto;
+//   // max-width: 250px;
+// }
+//
+// .weekday {
+//   border: 1px solid $pure-black;
+//   // max-height: 50px;
+//   // max-width: 50px;
+//   min-height: 25px;
+//   min-width: 100px;
+//   // padding: 0;
+// }
+//
+// .hour {
+//   border: 1px solid $pure-black;
+//   // max-height: 50px;
+//   // max-width: 50px;
+//   min-height: 25px;
+//   min-width: 100px;
+//   // padding: 0;
+// }
 
-.weekday {
-  border: 1px solid $pure-black;
-  // max-height: 50px;
-  // max-width: 50px;
-  min-height: 25px;
-  min-width: 100px;
-  // padding: 0;
-}
+// app/styles/app.scss
 
-.hour {
-  border: 1px solid $pure-black;
-  // max-height: 50px;
-  // max-width: 50px;
-  min-height: 25px;
-  min-width: 100px;
-  // padding: 0;
-}
+@import 'bower_components/fontawesome/scss/variables';
+@import 'bower_components/fontawesome/scss/path';
+@import 'bower_components/fontawesome/scss/mixins';
+@import 'bower_components/fontawesome/scss/icons';
+
+@import 'addons/ember-calendar/paint-core';
+@import 'addons/ember-calendar/main';

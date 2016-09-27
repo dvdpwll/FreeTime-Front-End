@@ -1,0 +1,11 @@
+{{! app/templates/index.hbs }}
+{{as-calendar
+  title="Ember Calendar"
+  occurrences=occurrences
+  defaultTimeZoneQuery="New York|London|Dubai|Hong Kong"
+  dayStartingTime="5:00"
+  dayEndingTime="24:00"
+  timeSlotDuration="00:30"
+  onAddOccurrence=(action "calendarAddOccurrence")
+  onUpdateOccurrence=(action "calendarUpdateOccurrence")
+  onRemoveOccurrence=(action "calendarRemoveOccurrence")}}
