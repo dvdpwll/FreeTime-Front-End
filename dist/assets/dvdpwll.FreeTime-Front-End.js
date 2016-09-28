@@ -386,6 +386,30 @@ define('dvdpwll.FreeTime-Front-End/components/as-calendar/timetable/content', ['
 define('dvdpwll.FreeTime-Front-End/components/as-calendar/timetable/occurrence', ['exports', 'ember-calendar/components/as-calendar/timetable/occurrence'], function (exports, _emberCalendarComponentsAsCalendarTimetableOccurrence) {
   exports['default'] = _emberCalendarComponentsAsCalendarTimetableOccurrence['default'];
 });
+define('dvdpwll.FreeTime-Front-End/components/basic-dropdown', ['exports', 'ember-basic-dropdown/components/basic-dropdown'], function (exports, _emberBasicDropdownComponentsBasicDropdown) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberBasicDropdownComponentsBasicDropdown['default'];
+    }
+  });
+});
+define('dvdpwll.FreeTime-Front-End/components/basic-dropdown/content', ['exports', 'ember-basic-dropdown/components/basic-dropdown/content'], function (exports, _emberBasicDropdownComponentsBasicDropdownContent) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberBasicDropdownComponentsBasicDropdownContent['default'];
+    }
+  });
+});
+define('dvdpwll.FreeTime-Front-End/components/basic-dropdown/trigger', ['exports', 'ember-basic-dropdown/components/basic-dropdown/trigger'], function (exports, _emberBasicDropdownComponentsBasicDropdownTrigger) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberBasicDropdownComponentsBasicDropdownTrigger['default'];
+    }
+  });
+});
 define('dvdpwll.FreeTime-Front-End/components/calendar-grid/component', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     // occurrences: Ember.A(),
@@ -628,6 +652,14 @@ define("dvdpwll.FreeTime-Front-End/components/email-input/template", ["exports"]
       templates: []
     };
   })());
+});
+define('dvdpwll.FreeTime-Front-End/components/ember-wormhole', ['exports', 'ember-wormhole/components/ember-wormhole'], function (exports, _emberWormholeComponentsEmberWormhole) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberWormholeComponentsEmberWormhole['default'];
+    }
+  });
 });
 define('dvdpwll.FreeTime-Front-End/components/flash-message', ['exports', 'ember-cli-flash/components/flash-message'], function (exports, _emberCliFlashComponentsFlashMessage) {
   Object.defineProperty(exports, 'default', {
@@ -1941,27 +1973,160 @@ define("dvdpwll.FreeTime-Front-End/components/navbar-header/template", ["exports
 });
 define('dvdpwll.FreeTime-Front-End/components/new-schedule-form/component', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
+    weekdays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    times: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
     newSchedule: {
       title: null,
-      day: null,
-      start: null,
-      end: null
+      day: 'Select Day',
+      start: 'Start Time',
+      end: 'End Time'
     },
     actions: {
       createSchedule: function createSchedule() {
         var data = this.get('newSchedule');
-        // data.schedule = this.get('user');
-        this.sendAction('createSchedule', data);
+
+        //send action if all fields are set
+        if (this.get('newSchedule.title') !== null || this.get('newSchedule.day') !== 'Select Day' || this.get('newSchedule.start') !== 'Start Time' || this.get('newSchedule.end') !== 'End Time') {
+          this.sendAction('createSchedule', data);
+        }
+
+        //reset form fields
         this.set('newSchedule.title', null);
-        this.set('newSchedule.day', null);
-        this.set('newSchedule.start', null);
-        this.set('newSchedule.end', null);
+        this.set('newSchedule.day', 'Select Day');
+        this.set('newSchedule.start', 'Start Time');
+        this.set('newSchedule.end', 'End Time');
       }
     }
   });
 });
 define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
+    var child0 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.5.1",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 6,
+              "column": 2
+            },
+            "end": {
+              "line": 13,
+              "column": 3
+            }
+          },
+          "moduleName": "dvdpwll.FreeTime-Front-End/components/new-schedule-form/template.hbs"
+        },
+        isEmpty: false,
+        arity: 1,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("     ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          return morphs;
+        },
+        statements: [["content", "name", ["loc", [null, [12, 5], [12, 13]]]]],
+        locals: ["name"],
+        templates: []
+      };
+    })();
+    var child1 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.5.1",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 15,
+              "column": 3
+            },
+            "end": {
+              "line": 22,
+              "column": 4
+            }
+          },
+          "moduleName": "dvdpwll.FreeTime-Front-End/components/new-schedule-form/template.hbs"
+        },
+        isEmpty: false,
+        arity: 1,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("      ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          return morphs;
+        },
+        statements: [["content", "name", ["loc", [null, [21, 6], [21, 14]]]]],
+        locals: ["name"],
+        templates: []
+      };
+    })();
+    var child2 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.5.1",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 24,
+              "column": 4
+            },
+            "end": {
+              "line": 31,
+              "column": 5
+            }
+          },
+          "moduleName": "dvdpwll.FreeTime-Front-End/components/new-schedule-form/template.hbs"
+        },
+        isEmpty: false,
+        arity: 1,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("       ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          return morphs;
+        },
+        statements: [["content", "name", ["loc", [null, [30, 7], [30, 15]]]]],
+        locals: ["name"],
+        templates: []
+      };
+    })();
     return {
       meta: {
         "fragmentReason": {
@@ -1976,7 +2141,7 @@ define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exp
             "column": 0
           },
           "end": {
-            "line": 8,
+            "line": 35,
             "column": 0
           }
         },
@@ -1991,17 +2156,33 @@ define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exp
         var el1 = dom.createElement("form");
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
-        var el2 = dom.createComment("");
+        var el2 = dom.createComment(" text field ");
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n  ");
+        var el2 = dom.createTextNode("\n\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment(" dropdown weekdays ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n  ");
+        var el2 = dom.createTextNode("   ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment(" dropdown start time ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("    ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment(" dropdown end time ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
@@ -2024,15 +2205,15 @@ define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exp
         var element0 = dom.childAt(fragment, [0]);
         var morphs = new Array(5);
         morphs[0] = dom.createElementMorph(element0);
-        morphs[1] = dom.createMorphAt(element0, 1, 1);
-        morphs[2] = dom.createMorphAt(element0, 3, 3);
-        morphs[3] = dom.createMorphAt(element0, 5, 5);
-        morphs[4] = dom.createMorphAt(element0, 7, 7);
+        morphs[1] = dom.createMorphAt(element0, 3, 3);
+        morphs[2] = dom.createMorphAt(element0, 7, 7);
+        morphs[3] = dom.createMorphAt(element0, 11, 11);
+        morphs[4] = dom.createMorphAt(element0, 15, 15);
         return morphs;
       },
-      statements: [["element", "action", ["createSchedule"], ["on", "submit"], ["loc", [null, [1, 6], [1, 45]]]], ["inline", "input", [], ["placeholder", "Title", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "newSchedule.title", ["loc", [null, [2, 69], [2, 86]]]]], [], []]], ["loc", [null, [2, 2], [2, 88]]]], ["inline", "input", [], ["placeholder", "Days of Week", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "newSchedule.day", ["loc", [null, [3, 76], [3, 91]]]]], [], []]], ["loc", [null, [3, 2], [3, 93]]]], ["inline", "input", [], ["placeholder", "Start Time", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "newSchedule.start", ["loc", [null, [4, 74], [4, 91]]]]], [], []]], ["loc", [null, [4, 2], [4, 93]]]], ["inline", "input", [], ["placeholder", "End Time", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "newSchedule.end", ["loc", [null, [5, 72], [5, 87]]]]], [], []]], ["loc", [null, [5, 2], [5, 89]]]]],
+      statements: [["element", "action", ["createSchedule"], ["on", "submit"], ["loc", [null, [1, 6], [1, 45]]]], ["inline", "input", [], ["placeholder", "Title", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "newSchedule.title", ["loc", [null, [3, 69], [3, 86]]]]], [], []]], ["loc", [null, [3, 2], [3, 88]]]], ["block", "power-select", [], ["selected", ["subexpr", "@mut", [["get", "newSchedule.day", ["loc", [null, [7, 14], [7, 29]]]]], [], []], "options", ["subexpr", "@mut", [["get", "weekdays", ["loc", [null, [8, 13], [8, 21]]]]], [], []], "onchange", ["subexpr", "action", [["subexpr", "mut", [["get", "newSchedule.day", ["loc", [null, [9, 27], [9, 42]]]]], [], ["loc", [null, [9, 22], [9, 43]]]]], [], ["loc", [null, [9, 14], [9, 44]]]]], 0, null, ["loc", [null, [6, 2], [13, 20]]]], ["block", "power-select", [], ["selected", ["subexpr", "@mut", [["get", "newSchedule.start", ["loc", [null, [16, 15], [16, 32]]]]], [], []], "options", ["subexpr", "@mut", [["get", "times", ["loc", [null, [17, 14], [17, 19]]]]], [], []], "onchange", ["subexpr", "action", [["subexpr", "mut", [["get", "newSchedule.start", ["loc", [null, [18, 28], [18, 45]]]]], [], ["loc", [null, [18, 23], [18, 46]]]]], [], ["loc", [null, [18, 15], [18, 47]]]]], 1, null, ["loc", [null, [15, 3], [22, 21]]]], ["block", "power-select", [], ["selected", ["subexpr", "@mut", [["get", "newSchedule.end", ["loc", [null, [25, 16], [25, 31]]]]], [], []], "options", ["subexpr", "@mut", [["get", "times", ["loc", [null, [26, 15], [26, 20]]]]], [], []], "onchange", ["subexpr", "action", [["subexpr", "mut", [["get", "newSchedule.end", ["loc", [null, [27, 29], [27, 44]]]]], [], ["loc", [null, [27, 24], [27, 45]]]]], [], ["loc", [null, [27, 16], [27, 46]]]]], 2, null, ["loc", [null, [24, 4], [31, 22]]]]],
       locals: [],
-      templates: []
+      templates: [child0, child1, child2]
     };
   })());
 });
@@ -2152,6 +2333,62 @@ define("dvdpwll.FreeTime-Front-End/components/password-input/template", ["export
     };
   })());
 });
+define('dvdpwll.FreeTime-Front-End/components/power-select-multiple', ['exports', 'ember-power-select/components/power-select-multiple'], function (exports, _emberPowerSelectComponentsPowerSelectMultiple) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberPowerSelectComponentsPowerSelectMultiple['default'];
+    }
+  });
+});
+define('dvdpwll.FreeTime-Front-End/components/power-select-multiple/trigger', ['exports', 'ember-power-select/components/power-select-multiple/trigger'], function (exports, _emberPowerSelectComponentsPowerSelectMultipleTrigger) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberPowerSelectComponentsPowerSelectMultipleTrigger['default'];
+    }
+  });
+});
+define('dvdpwll.FreeTime-Front-End/components/power-select', ['exports', 'ember-power-select/components/power-select'], function (exports, _emberPowerSelectComponentsPowerSelect) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberPowerSelectComponentsPowerSelect['default'];
+    }
+  });
+});
+define('dvdpwll.FreeTime-Front-End/components/power-select/before-options', ['exports', 'ember-power-select/components/power-select/before-options'], function (exports, _emberPowerSelectComponentsPowerSelectBeforeOptions) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberPowerSelectComponentsPowerSelectBeforeOptions['default'];
+    }
+  });
+});
+define('dvdpwll.FreeTime-Front-End/components/power-select/options', ['exports', 'ember-power-select/components/power-select/options'], function (exports, _emberPowerSelectComponentsPowerSelectOptions) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberPowerSelectComponentsPowerSelectOptions['default'];
+    }
+  });
+});
+define('dvdpwll.FreeTime-Front-End/components/power-select/search-message', ['exports', 'ember-power-select/components/power-select/search-message'], function (exports, _emberPowerSelectComponentsPowerSelectSearchMessage) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberPowerSelectComponentsPowerSelectSearchMessage['default'];
+    }
+  });
+});
+define('dvdpwll.FreeTime-Front-End/components/power-select/trigger', ['exports', 'ember-power-select/components/power-select/trigger'], function (exports, _emberPowerSelectComponentsPowerSelectTrigger) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberPowerSelectComponentsPowerSelectTrigger['default'];
+    }
+  });
+});
 define('dvdpwll.FreeTime-Front-End/components/rl-dropdown-container', ['exports', 'ember-rl-dropdown/components/rl-dropdown-container'], function (exports, _emberRlDropdownComponentsRlDropdownContainer) {
   exports['default'] = _emberRlDropdownComponentsRlDropdownContainer['default'];
 });
@@ -2254,6 +2491,8 @@ define('dvdpwll.FreeTime-Front-End/components/schedule-list/component', ['export
 });
 define('dvdpwll.FreeTime-Front-End/components/schedule-list/edit/component', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
+    weekdays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    times: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
     actions: {
       save: function save() {
         this.sendAction('save', this.get('schedule'));
@@ -2263,6 +2502,132 @@ define('dvdpwll.FreeTime-Front-End/components/schedule-list/edit/component', ['e
 });
 define("dvdpwll.FreeTime-Front-End/components/schedule-list/edit/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
+    var child0 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.5.1",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 8,
+              "column": 2
+            },
+            "end": {
+              "line": 15,
+              "column": 3
+            }
+          },
+          "moduleName": "dvdpwll.FreeTime-Front-End/components/schedule-list/edit/template.hbs"
+        },
+        isEmpty: false,
+        arity: 1,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("     ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          return morphs;
+        },
+        statements: [["content", "name", ["loc", [null, [14, 5], [14, 13]]]]],
+        locals: ["name"],
+        templates: []
+      };
+    })();
+    var child1 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.5.1",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 17,
+              "column": 3
+            },
+            "end": {
+              "line": 24,
+              "column": 4
+            }
+          },
+          "moduleName": "dvdpwll.FreeTime-Front-End/components/schedule-list/edit/template.hbs"
+        },
+        isEmpty: false,
+        arity: 1,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("      ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          return morphs;
+        },
+        statements: [["content", "name", ["loc", [null, [23, 6], [23, 14]]]]],
+        locals: ["name"],
+        templates: []
+      };
+    })();
+    var child2 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.5.1",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 26,
+              "column": 4
+            },
+            "end": {
+              "line": 33,
+              "column": 5
+            }
+          },
+          "moduleName": "dvdpwll.FreeTime-Front-End/components/schedule-list/edit/template.hbs"
+        },
+        isEmpty: false,
+        arity: 1,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("       ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          return morphs;
+        },
+        statements: [["content", "name", ["loc", [null, [32, 7], [32, 15]]]]],
+        locals: ["name"],
+        templates: []
+      };
+    })();
     return {
       meta: {
         "fragmentReason": {
@@ -2277,7 +2642,7 @@ define("dvdpwll.FreeTime-Front-End/components/schedule-list/edit/template", ["ex
             "column": 0
           },
           "end": {
-            "line": 8,
+            "line": 36,
             "column": 0
           }
         },
@@ -2296,17 +2661,33 @@ define("dvdpwll.FreeTime-Front-End/components/schedule-list/edit/template", ["ex
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
+        var el2 = dom.createComment(" {{input placeholder='New Days' class='input-group form-control' value=schedule.day}}\n  {{input placeholder='New Start' class='input-group form-control' value=schedule.start}}\n  {{input placeholder='New End' class='input-group form-control' value=schedule.end}} ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment(" dropdown weekdays ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n  ");
+        var el2 = dom.createTextNode("   ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment(" dropdown start time ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n  ");
+        var el2 = dom.createTextNode("    ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment(" dropdown end time ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n  ");
+        var el2 = dom.createTextNode("  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("button");
         dom.setAttribute(el2, "type", "submit");
@@ -2326,14 +2707,14 @@ define("dvdpwll.FreeTime-Front-End/components/schedule-list/edit/template", ["ex
         var morphs = new Array(5);
         morphs[0] = dom.createElementMorph(element0);
         morphs[1] = dom.createMorphAt(element0, 1, 1);
-        morphs[2] = dom.createMorphAt(element0, 3, 3);
-        morphs[3] = dom.createMorphAt(element0, 5, 5);
-        morphs[4] = dom.createMorphAt(element0, 7, 7);
+        morphs[2] = dom.createMorphAt(element0, 7, 7);
+        morphs[3] = dom.createMorphAt(element0, 11, 11);
+        morphs[4] = dom.createMorphAt(element0, 15, 15);
         return morphs;
       },
-      statements: [["element", "action", ["save"], ["on", "submit"], ["loc", [null, [1, 6], [1, 35]]]], ["inline", "input", [], ["placeholder", "New Title", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "schedule.title", ["loc", [null, [2, 73], [2, 87]]]]], [], []]], ["loc", [null, [2, 2], [2, 89]]]], ["inline", "input", [], ["placeholder", "New Days", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "schedule.day", ["loc", [null, [3, 72], [3, 84]]]]], [], []]], ["loc", [null, [3, 2], [3, 86]]]], ["inline", "input", [], ["placeholder", "New Start", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "schedule.start", ["loc", [null, [4, 73], [4, 87]]]]], [], []]], ["loc", [null, [4, 2], [4, 89]]]], ["inline", "input", [], ["placeholder", "New End", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "schedule.end", ["loc", [null, [5, 71], [5, 83]]]]], [], []]], ["loc", [null, [5, 2], [5, 85]]]]],
+      statements: [["element", "action", ["save"], ["on", "submit"], ["loc", [null, [1, 6], [1, 35]]]], ["inline", "input", [], ["placeholder", "New Title", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "schedule.title", ["loc", [null, [2, 73], [2, 87]]]]], [], []]], ["loc", [null, [2, 2], [2, 89]]]], ["block", "power-select", [], ["selected", ["subexpr", "@mut", [["get", "schedule.day", ["loc", [null, [9, 14], [9, 26]]]]], [], []], "options", ["subexpr", "@mut", [["get", "weekdays", ["loc", [null, [10, 13], [10, 21]]]]], [], []], "onchange", ["subexpr", "action", [["subexpr", "mut", [["get", "schedule.day", ["loc", [null, [11, 27], [11, 39]]]]], [], ["loc", [null, [11, 22], [11, 40]]]]], [], ["loc", [null, [11, 14], [11, 41]]]]], 0, null, ["loc", [null, [8, 2], [15, 20]]]], ["block", "power-select", [], ["selected", ["subexpr", "@mut", [["get", "schedule.start", ["loc", [null, [18, 15], [18, 29]]]]], [], []], "options", ["subexpr", "@mut", [["get", "times", ["loc", [null, [19, 14], [19, 19]]]]], [], []], "onchange", ["subexpr", "action", [["subexpr", "mut", [["get", "schedule.start", ["loc", [null, [20, 28], [20, 42]]]]], [], ["loc", [null, [20, 23], [20, 43]]]]], [], ["loc", [null, [20, 15], [20, 44]]]]], 1, null, ["loc", [null, [17, 3], [24, 21]]]], ["block", "power-select", [], ["selected", ["subexpr", "@mut", [["get", "schedule.end", ["loc", [null, [27, 16], [27, 28]]]]], [], []], "options", ["subexpr", "@mut", [["get", "times", ["loc", [null, [28, 15], [28, 20]]]]], [], []], "onchange", ["subexpr", "action", [["subexpr", "mut", [["get", "schedule.end", ["loc", [null, [29, 29], [29, 41]]]]], [], ["loc", [null, [29, 24], [29, 42]]]]], [], ["loc", [null, [29, 16], [29, 43]]]]], 2, null, ["loc", [null, [26, 4], [33, 22]]]]],
       locals: [],
-      templates: []
+      templates: [child0, child1, child2]
     };
   })());
 });
@@ -2614,6 +2995,118 @@ define('dvdpwll.FreeTime-Front-End/flash/object', ['exports', 'ember-cli-flash/f
     }
   });
 });
+define('dvdpwll.FreeTime-Front-End/helpers/and', ['exports', 'ember', 'ember-truth-helpers/helpers/and'], function (exports, _ember, _emberTruthHelpersHelpersAnd) {
+
+  var forExport = null;
+
+  if (_ember['default'].Helper) {
+    forExport = _ember['default'].Helper.helper(_emberTruthHelpersHelpersAnd.andHelper);
+  } else if (_ember['default'].HTMLBars.makeBoundHelper) {
+    forExport = _ember['default'].HTMLBars.makeBoundHelper(_emberTruthHelpersHelpersAnd.andHelper);
+  }
+
+  exports['default'] = forExport;
+});
+define('dvdpwll.FreeTime-Front-End/helpers/ember-power-select-is-selected', ['exports', 'ember-power-select/helpers/ember-power-select-is-selected'], function (exports, _emberPowerSelectHelpersEmberPowerSelectIsSelected) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberPowerSelectHelpersEmberPowerSelectIsSelected['default'];
+    }
+  });
+  Object.defineProperty(exports, 'emberPowerSelectIsSelected', {
+    enumerable: true,
+    get: function get() {
+      return _emberPowerSelectHelpersEmberPowerSelectIsSelected.emberPowerSelectIsSelected;
+    }
+  });
+});
+define('dvdpwll.FreeTime-Front-End/helpers/ember-power-select-true-string-if-present', ['exports', 'ember-power-select/helpers/ember-power-select-true-string-if-present'], function (exports, _emberPowerSelectHelpersEmberPowerSelectTrueStringIfPresent) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberPowerSelectHelpersEmberPowerSelectTrueStringIfPresent['default'];
+    }
+  });
+  Object.defineProperty(exports, 'emberPowerSelectTrueStringIfPresent', {
+    enumerable: true,
+    get: function get() {
+      return _emberPowerSelectHelpersEmberPowerSelectTrueStringIfPresent.emberPowerSelectTrueStringIfPresent;
+    }
+  });
+});
+define('dvdpwll.FreeTime-Front-End/helpers/eq', ['exports', 'ember', 'ember-truth-helpers/helpers/equal'], function (exports, _ember, _emberTruthHelpersHelpersEqual) {
+
+  var forExport = null;
+
+  if (_ember['default'].Helper) {
+    forExport = _ember['default'].Helper.helper(_emberTruthHelpersHelpersEqual.equalHelper);
+  } else if (_ember['default'].HTMLBars.makeBoundHelper) {
+    forExport = _ember['default'].HTMLBars.makeBoundHelper(_emberTruthHelpersHelpersEqual.equalHelper);
+  }
+
+  exports['default'] = forExport;
+});
+define('dvdpwll.FreeTime-Front-End/helpers/gt', ['exports', 'ember', 'ember-truth-helpers/helpers/gt'], function (exports, _ember, _emberTruthHelpersHelpersGt) {
+
+  var forExport = null;
+
+  if (_ember['default'].Helper) {
+    forExport = _ember['default'].Helper.helper(_emberTruthHelpersHelpersGt.gtHelper);
+  } else if (_ember['default'].HTMLBars.makeBoundHelper) {
+    forExport = _ember['default'].HTMLBars.makeBoundHelper(_emberTruthHelpersHelpersGt.gtHelper);
+  }
+
+  exports['default'] = forExport;
+});
+define('dvdpwll.FreeTime-Front-End/helpers/gte', ['exports', 'ember', 'ember-truth-helpers/helpers/gte'], function (exports, _ember, _emberTruthHelpersHelpersGte) {
+
+  var forExport = null;
+
+  if (_ember['default'].Helper) {
+    forExport = _ember['default'].Helper.helper(_emberTruthHelpersHelpersGte.gteHelper);
+  } else if (_ember['default'].HTMLBars.makeBoundHelper) {
+    forExport = _ember['default'].HTMLBars.makeBoundHelper(_emberTruthHelpersHelpersGte.gteHelper);
+  }
+
+  exports['default'] = forExport;
+});
+define('dvdpwll.FreeTime-Front-End/helpers/is-array', ['exports', 'ember', 'ember-truth-helpers/helpers/is-array'], function (exports, _ember, _emberTruthHelpersHelpersIsArray) {
+
+  var forExport = null;
+
+  if (_ember['default'].Helper) {
+    forExport = _ember['default'].Helper.helper(_emberTruthHelpersHelpersIsArray.isArrayHelper);
+  } else if (_ember['default'].HTMLBars.makeBoundHelper) {
+    forExport = _ember['default'].HTMLBars.makeBoundHelper(_emberTruthHelpersHelpersIsArray.isArrayHelper);
+  }
+
+  exports['default'] = forExport;
+});
+define('dvdpwll.FreeTime-Front-End/helpers/lt', ['exports', 'ember', 'ember-truth-helpers/helpers/lt'], function (exports, _ember, _emberTruthHelpersHelpersLt) {
+
+  var forExport = null;
+
+  if (_ember['default'].Helper) {
+    forExport = _ember['default'].Helper.helper(_emberTruthHelpersHelpersLt.ltHelper);
+  } else if (_ember['default'].HTMLBars.makeBoundHelper) {
+    forExport = _ember['default'].HTMLBars.makeBoundHelper(_emberTruthHelpersHelpersLt.ltHelper);
+  }
+
+  exports['default'] = forExport;
+});
+define('dvdpwll.FreeTime-Front-End/helpers/lte', ['exports', 'ember', 'ember-truth-helpers/helpers/lte'], function (exports, _ember, _emberTruthHelpersHelpersLte) {
+
+  var forExport = null;
+
+  if (_ember['default'].Helper) {
+    forExport = _ember['default'].Helper.helper(_emberTruthHelpersHelpersLte.lteHelper);
+  } else if (_ember['default'].HTMLBars.makeBoundHelper) {
+    forExport = _ember['default'].HTMLBars.makeBoundHelper(_emberTruthHelpersHelpersLte.lteHelper);
+  }
+
+  exports['default'] = forExport;
+});
 define('dvdpwll.FreeTime-Front-End/helpers/moment-calendar', ['exports', 'ember-moment/helpers/moment-calendar'], function (exports, _emberMomentHelpersMomentCalendar) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
@@ -2651,11 +3144,59 @@ define('dvdpwll.FreeTime-Front-End/helpers/moment-to-now', ['exports', 'ember', 
     globalAllowEmpty: !!_ember['default'].get(_dvdpwllFreeTimeFrontEndConfigEnvironment['default'], 'moment.allowEmpty')
   });
 });
+define('dvdpwll.FreeTime-Front-End/helpers/not-eq', ['exports', 'ember', 'ember-truth-helpers/helpers/not-equal'], function (exports, _ember, _emberTruthHelpersHelpersNotEqual) {
+
+  var forExport = null;
+
+  if (_ember['default'].Helper) {
+    forExport = _ember['default'].Helper.helper(_emberTruthHelpersHelpersNotEqual.notEqualHelper);
+  } else if (_ember['default'].HTMLBars.makeBoundHelper) {
+    forExport = _ember['default'].HTMLBars.makeBoundHelper(_emberTruthHelpersHelpersNotEqual.notEqualHelper);
+  }
+
+  exports['default'] = forExport;
+});
+define('dvdpwll.FreeTime-Front-End/helpers/not', ['exports', 'ember', 'ember-truth-helpers/helpers/not'], function (exports, _ember, _emberTruthHelpersHelpersNot) {
+
+  var forExport = null;
+
+  if (_ember['default'].Helper) {
+    forExport = _ember['default'].Helper.helper(_emberTruthHelpersHelpersNot.notHelper);
+  } else if (_ember['default'].HTMLBars.makeBoundHelper) {
+    forExport = _ember['default'].HTMLBars.makeBoundHelper(_emberTruthHelpersHelpersNot.notHelper);
+  }
+
+  exports['default'] = forExport;
+});
+define('dvdpwll.FreeTime-Front-End/helpers/or', ['exports', 'ember', 'ember-truth-helpers/helpers/or'], function (exports, _ember, _emberTruthHelpersHelpersOr) {
+
+  var forExport = null;
+
+  if (_ember['default'].Helper) {
+    forExport = _ember['default'].Helper.helper(_emberTruthHelpersHelpersOr.orHelper);
+  } else if (_ember['default'].HTMLBars.makeBoundHelper) {
+    forExport = _ember['default'].HTMLBars.makeBoundHelper(_emberTruthHelpersHelpersOr.orHelper);
+  }
+
+  exports['default'] = forExport;
+});
 define('dvdpwll.FreeTime-Front-End/helpers/pluralize', ['exports', 'ember-inflector/lib/helpers/pluralize'], function (exports, _emberInflectorLibHelpersPluralize) {
   exports['default'] = _emberInflectorLibHelpersPluralize['default'];
 });
 define('dvdpwll.FreeTime-Front-End/helpers/singularize', ['exports', 'ember-inflector/lib/helpers/singularize'], function (exports, _emberInflectorLibHelpersSingularize) {
   exports['default'] = _emberInflectorLibHelpersSingularize['default'];
+});
+define('dvdpwll.FreeTime-Front-End/helpers/xor', ['exports', 'ember', 'ember-truth-helpers/helpers/xor'], function (exports, _ember, _emberTruthHelpersHelpersXor) {
+
+  var forExport = null;
+
+  if (_ember['default'].Helper) {
+    forExport = _ember['default'].Helper.helper(_emberTruthHelpersHelpersXor.xorHelper);
+  } else if (_ember['default'].HTMLBars.makeBoundHelper) {
+    forExport = _ember['default'].HTMLBars.makeBoundHelper(_emberTruthHelpersHelpersXor.xorHelper);
+  }
+
+  exports['default'] = forExport;
 });
 define("dvdpwll.FreeTime-Front-End/initializers/active-model-adapter", ["exports", "active-model-adapter", "active-model-adapter/active-model-serializer"], function (exports, _activeModelAdapter, _activeModelAdapterActiveModelSerializer) {
   exports["default"] = {
@@ -2904,6 +3445,34 @@ define('dvdpwll.FreeTime-Front-End/initializers/transforms', ['exports', 'ember'
     name: 'transforms',
     before: 'store',
     initialize: _ember['default'].K
+  };
+});
+define('dvdpwll.FreeTime-Front-End/initializers/truth-helpers', ['exports', 'ember', 'ember-truth-helpers/utils/register-helper', 'ember-truth-helpers/helpers/and', 'ember-truth-helpers/helpers/or', 'ember-truth-helpers/helpers/equal', 'ember-truth-helpers/helpers/not', 'ember-truth-helpers/helpers/is-array', 'ember-truth-helpers/helpers/not-equal', 'ember-truth-helpers/helpers/gt', 'ember-truth-helpers/helpers/gte', 'ember-truth-helpers/helpers/lt', 'ember-truth-helpers/helpers/lte'], function (exports, _ember, _emberTruthHelpersUtilsRegisterHelper, _emberTruthHelpersHelpersAnd, _emberTruthHelpersHelpersOr, _emberTruthHelpersHelpersEqual, _emberTruthHelpersHelpersNot, _emberTruthHelpersHelpersIsArray, _emberTruthHelpersHelpersNotEqual, _emberTruthHelpersHelpersGt, _emberTruthHelpersHelpersGte, _emberTruthHelpersHelpersLt, _emberTruthHelpersHelpersLte) {
+  exports.initialize = initialize;
+
+  function initialize() /* container, application */{
+
+    // Do not register helpers from Ember 1.13 onwards, starting from 1.13 they
+    // will be auto-discovered.
+    if (_ember['default'].Helper) {
+      return;
+    }
+
+    (0, _emberTruthHelpersUtilsRegisterHelper.registerHelper)('and', _emberTruthHelpersHelpersAnd.andHelper);
+    (0, _emberTruthHelpersUtilsRegisterHelper.registerHelper)('or', _emberTruthHelpersHelpersOr.orHelper);
+    (0, _emberTruthHelpersUtilsRegisterHelper.registerHelper)('eq', _emberTruthHelpersHelpersEqual.equalHelper);
+    (0, _emberTruthHelpersUtilsRegisterHelper.registerHelper)('not', _emberTruthHelpersHelpersNot.notHelper);
+    (0, _emberTruthHelpersUtilsRegisterHelper.registerHelper)('is-array', _emberTruthHelpersHelpersIsArray.isArrayHelper);
+    (0, _emberTruthHelpersUtilsRegisterHelper.registerHelper)('not-eq', _emberTruthHelpersHelpersNotEqual.notEqualHelper);
+    (0, _emberTruthHelpersUtilsRegisterHelper.registerHelper)('gt', _emberTruthHelpersHelpersGt.gtHelper);
+    (0, _emberTruthHelpersUtilsRegisterHelper.registerHelper)('gte', _emberTruthHelpersHelpersGte.gteHelper);
+    (0, _emberTruthHelpersUtilsRegisterHelper.registerHelper)('lt', _emberTruthHelpersHelpersLt.ltHelper);
+    (0, _emberTruthHelpersUtilsRegisterHelper.registerHelper)('lte', _emberTruthHelpersHelpersLte.lteHelper);
+  }
+
+  exports['default'] = {
+    name: 'truth-helpers',
+    initialize: initialize
   };
 });
 define("dvdpwll.FreeTime-Front-End/instance-initializers/ember-data", ["exports", "ember-data/-private/instance-initializers/initialize-store-service"], function (exports, _emberDataPrivateInstanceInitializersInitializeStoreService) {
@@ -3466,6 +4035,14 @@ define("dvdpwll.FreeTime-Front-End/services/liquid-fire-transitions", ["exports"
 define('dvdpwll.FreeTime-Front-End/services/moment', ['exports', 'ember', 'dvdpwll.FreeTime-Front-End/config/environment', 'ember-moment/services/moment'], function (exports, _ember, _dvdpwllFreeTimeFrontEndConfigEnvironment, _emberMomentServicesMoment) {
   exports['default'] = _emberMomentServicesMoment['default'].extend({
     defaultFormat: _ember['default'].get(_dvdpwllFreeTimeFrontEndConfigEnvironment['default'], 'moment.outputFormat')
+  });
+});
+define('dvdpwll.FreeTime-Front-End/services/text-measurer', ['exports', 'ember-text-measurer/services/text-measurer'], function (exports, _emberTextMeasurerServicesTextMeasurer) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberTextMeasurerServicesTextMeasurer['default'];
+    }
   });
 });
 define('dvdpwll.FreeTime-Front-End/sign-in/route', ['exports', 'ember'], function (exports, _ember) {
@@ -7484,7 +8061,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dvdpwll.FreeTime-Front-End/app")["default"].create({"name":"dvdpwll.FreeTime-Front-End","version":"0.0.0+623e04ee"});
+  require("dvdpwll.FreeTime-Front-End/app")["default"].create({"name":"dvdpwll.FreeTime-Front-End","version":"0.0.0+0075589b"});
 }
 
 /* jshint ignore:end */

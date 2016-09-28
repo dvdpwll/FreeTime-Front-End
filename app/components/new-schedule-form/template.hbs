@@ -1,7 +1,34 @@
 <form {{action 'createSchedule' on='submit'}}>
+  <!-- text field -->
   {{input placeholder='Title' class='input-group form-control' value=newSchedule.title}}
-  {{input placeholder='Days of Week' class='input-group form-control' value=newSchedule.day}}
-  {{input placeholder='Start Time' class='input-group form-control' value=newSchedule.start}}
-  {{input placeholder='End Time' class='input-group form-control' value=newSchedule.end}}
+
+  <!-- dropdown weekdays -->
+  {{#power-select
+     selected=newSchedule.day
+     options=weekdays
+     onchange=(action (mut newSchedule.day))
+     as |name|
+   }}
+     {{name}}
+   {{/power-select}}
+   <!-- dropdown start time -->
+   {{#power-select
+      selected=newSchedule.start
+      options=times
+      onchange=(action (mut newSchedule.start))
+      as |name|
+    }}
+      {{name}}
+    {{/power-select}}
+    <!-- dropdown end time -->
+    {{#power-select
+       selected=newSchedule.end
+       options=times
+       onchange=(action (mut newSchedule.end))
+       as |name|
+     }}
+       {{name}}
+     {{/power-select}}
+
   <button type="submit" name="submit">Submit</button>
 </form>

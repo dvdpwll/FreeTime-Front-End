@@ -1,3 +1,11 @@
+@import 'bootstrap';
+@import 'bootstrap/theme';
+@import 'colors';
+
+@import 'schedule';
+@import 'calendar';
+
+
 my calendar
 <div class="container calendar text-center">
         <div class="row weekdays">
