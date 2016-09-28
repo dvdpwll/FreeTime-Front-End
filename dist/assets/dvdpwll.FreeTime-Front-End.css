@@ -6463,6 +6463,10 @@ button.close {
 .schedule-hidden :not(:first-child) {
   display: none; }
 
+.schedule-card {
+  float: left;
+  width: 25%; }
+
 /* FONT PATH
  * -------------------------- */
 @font-face {
@@ -8755,3 +8759,23 @@ button.close {
 
 .as-calendar-occurrence:hover .as-calendar-occurrence__remove {
   opacity: .65; }
+
+.new-schedule-form > form {
+  margin: auto;
+  width: 50%; }
+  .new-schedule-form > form > div {
+    float: left;
+    width: 33.3%; }
+  .new-schedule-form > form > button {
+    float: none;
+    width: 100%; }
+
+.new-user-form > form {
+  margin: auto; }
+  .new-user-form > form > button {
+    float: none;
+    width: 100%; }
+
+.user-forms {
+  margin: auto;
+  width: 50%; }

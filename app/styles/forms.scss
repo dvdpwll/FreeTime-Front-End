@@ -1,0 +1,42 @@
+// form {
+//   width: 50%;
+//   margin: auto;
+//   > div {
+//     width: 33.3%;
+//     float: left;
+//   }
+//   > button {
+//     float: none;
+//     width: 100%;
+//   }
+// }
+
+.new-schedule-form {
+  > form {
+    margin: auto;
+    width: 50%;
+    > div {
+      float: left;
+      width: 33.3%;
+    }
+    > button {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+.new-user-form {
+  > form {
+    margin: auto;
+    > button {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+.user-forms {
+  margin: auto;
+  width: 50%;
+}

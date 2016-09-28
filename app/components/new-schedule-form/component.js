@@ -11,14 +11,16 @@ export default Ember.Component.extend({
     start: 'Start Time',
     end: 'End Time',
   },
+  classNameBindings: ['newScheduleForm'],
+  newScheduleForm: true,
   actions: {
     createSchedule () {
       let data = this.get('newSchedule');
 
       //send action if all fields are set
-      if (this.get('newSchedule.title') !== null ||
-          this.get('newSchedule.day') !== 'Select Day' ||
-          this.get('newSchedule.start') !== 'Start Time' ||
+      if (this.get('newSchedule.title') !== null &&
+          this.get('newSchedule.day') !== 'Select Day' &&
+          this.get('newSchedule.start') !== 'Start Time' &&
           this.get('newSchedule.end') !== 'End Time'){
         this.sendAction('createSchedule', data);
       }

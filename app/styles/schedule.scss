@@ -1,3 +1,8 @@
 .schedule-hidden :not(:first-child) {
   display: none;
 }
+
+.schedule-card {
+  float: left;
+  width: 25%;
+}
