@@ -208,6 +208,12 @@ define('dvdpwll.FreeTime-Front-End/calendar/route', ['exports', 'ember'], functi
   exports['default'] = _ember['default'].Route.extend({
     model: function model() {
       return this.get('store').findAll('schedule');
+    },
+    actions: {
+      addUser: function addUser(search) {
+        console.log('calendar/route.js');
+        console.log(search);
+      }
     }
   });
 });
@@ -239,11 +245,7 @@ define("dvdpwll.FreeTime-Front-End/calendar/template", ["exports"], function (ex
       hasRendered: false,
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
-        var el1 = dom.createComment("");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("br");
+        var el1 = dom.createComment(" {{add-user-to-calendar addUser='addUser'}}\n<br> ");
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
@@ -254,13 +256,11 @@ define("dvdpwll.FreeTime-Front-End/calendar/template", ["exports"], function (ex
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var morphs = new Array(2);
-        morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
-        morphs[1] = dom.createMorphAt(fragment, 4, 4, contextualElement);
-        dom.insertBoundary(fragment, 0);
+        var morphs = new Array(1);
+        morphs[0] = dom.createMorphAt(fragment, 2, 2, contextualElement);
         return morphs;
       },
-      statements: [["content", "add-user-to-calendar", ["loc", [null, [1, 0], [1, 25]]]], ["inline", "calendar-grid", [], ["occurrences", ["subexpr", "@mut", [["get", "model", ["loc", [null, [3, 28], [3, 33]]]]], [], []]], ["loc", [null, [3, 0], [3, 35]]]]],
+      statements: [["inline", "calendar-grid", [], ["occurrences", ["subexpr", "@mut", [["get", "model", ["loc", [null, [3, 28], [3, 33]]]]], [], []]], ["loc", [null, [3, 0], [3, 35]]]]],
       locals: [],
       templates: []
     };
@@ -344,7 +344,21 @@ define("dvdpwll.FreeTime-Front-End/change-password/template", ["exports"], funct
 define('dvdpwll.FreeTime-Front-End/components/add-user-to-calendar/component', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     classNameBindings: ['newUserForm'],
-    newUserForm: true
+    newUserForm: true,
+    search: {
+      email: null
+    },
+    actions: {
+      addUser: function addUser() {
+        var data = this.get('search');
+        //check if field was empty on submit
+        if (this.get('search.email') !== null) {
+          this.sendAction('addUser', data);
+        }
+        //reset form field
+        this.set('search.email', null);
+      }
+    }
   });
 });
 define("dvdpwll.FreeTime-Front-End/components/add-user-to-calendar/template", ["exports"], function (exports) {
@@ -402,7 +416,7 @@ define("dvdpwll.FreeTime-Front-End/components/add-user-to-calendar/template", ["
         morphs[1] = dom.createMorphAt(element0, 1, 1);
         return morphs;
       },
-      statements: [["element", "action", ["addUser"], ["on", "submit"], ["loc", [null, [1, 6], [1, 38]]]], ["inline", "input", [], ["placeholder", "Username", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "newSchedule.title", ["loc", [null, [2, 72], [2, 89]]]]], [], []]], ["loc", [null, [2, 2], [2, 91]]]]],
+      statements: [["element", "action", ["addUser"], ["on", "submit"], ["loc", [null, [1, 6], [1, 38]]]], ["inline", "input", [], ["placeholder", "Username", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "search.email", ["loc", [null, [2, 72], [2, 84]]]]], [], []]], ["loc", [null, [2, 2], [2, 86]]]]],
       locals: [],
       templates: []
     };
@@ -1786,11 +1800,11 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
           "loc": {
             "source": null,
             "start": {
-              "line": 28,
+              "line": 26,
               "column": 0
             },
             "end": {
-              "line": 30,
+              "line": 28,
               "column": 0
             }
           },
@@ -1815,7 +1829,7 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flash-message", [], ["flash", ["subexpr", "@mut", [["get", "flash", ["loc", [null, [29, 24], [29, 29]]]]], [], []]], ["loc", [null, [29, 2], [29, 31]]]]],
+        statements: [["inline", "flash-message", [], ["flash", ["subexpr", "@mut", [["get", "flash", ["loc", [null, [27, 24], [27, 29]]]]], [], []]], ["loc", [null, [27, 2], [27, 31]]]]],
         locals: ["flash"],
         templates: []
       };
@@ -1834,7 +1848,7 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
             "column": 0
           },
           "end": {
-            "line": 35,
+            "line": 33,
             "column": 0
           }
         },
@@ -1894,12 +1908,6 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n\n");
         dom.appendChild(el0, el1);
-        var el1 = dom.createElement("h1");
-        var el2 = dom.createTextNode("Welcome to Ember!");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n");
-        dom.appendChild(el0, el1);
         var el1 = dom.createComment("");
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
@@ -1924,11 +1932,11 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
         morphs[0] = dom.createMorphAt(element1, 1, 1);
         morphs[1] = dom.createMorphAt(dom.childAt(element2, [1]), 1, 1);
         morphs[2] = dom.createMorphAt(dom.childAt(element2, [3]), 1, 1);
-        morphs[3] = dom.createMorphAt(fragment, 4, 4, contextualElement);
-        morphs[4] = dom.createMorphAt(dom.childAt(fragment, [6]), 1, 1);
+        morphs[3] = dom.createMorphAt(fragment, 2, 2, contextualElement);
+        morphs[4] = dom.createMorphAt(dom.childAt(fragment, [4]), 1, 1);
         return morphs;
       },
-      statements: [["content", "navbar-header", ["loc", [null, [3, 4], [3, 21]]]], ["block", "if", [["get", "isAuthenticated", ["loc", [null, [7, 14], [7, 29]]]]], [], 0, null, ["loc", [null, [7, 8], [9, 15]]]], ["block", "if", [["get", "isAuthenticated", ["loc", [null, [12, 14], [12, 29]]]]], [], 1, 2, ["loc", [null, [12, 8], [20, 15]]]], ["block", "each", [["get", "flashMessages.queue", ["loc", [null, [28, 8], [28, 27]]]]], [], 3, null, ["loc", [null, [28, 0], [30, 9]]]], ["content", "outlet", ["loc", [null, [33, 2], [33, 12]]]]],
+      statements: [["content", "navbar-header", ["loc", [null, [3, 4], [3, 21]]]], ["block", "if", [["get", "isAuthenticated", ["loc", [null, [7, 14], [7, 29]]]]], [], 0, null, ["loc", [null, [7, 8], [9, 15]]]], ["block", "if", [["get", "isAuthenticated", ["loc", [null, [12, 14], [12, 29]]]]], [], 1, 2, ["loc", [null, [12, 8], [20, 15]]]], ["block", "each", [["get", "flashMessages.queue", ["loc", [null, [26, 8], [26, 27]]]]], [], 3, null, ["loc", [null, [26, 0], [28, 9]]]], ["content", "outlet", ["loc", [null, [31, 2], [31, 12]]]]],
       locals: [],
       templates: [child0, child1, child2, child3]
     };
@@ -3255,6 +3263,54 @@ define('dvdpwll.FreeTime-Front-End/helpers/xor', ['exports', 'ember', 'ember-tru
   }
 
   exports['default'] = forExport;
+});
+define('dvdpwll.FreeTime-Front-End/index/route', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Route.extend({});
+});
+define("dvdpwll.FreeTime-Front-End/index/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    return {
+      meta: {
+        "fragmentReason": {
+          "name": "triple-curlies"
+        },
+        "revision": "Ember@2.5.1",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 2,
+            "column": 0
+          }
+        },
+        "moduleName": "dvdpwll.FreeTime-Front-End/index/template.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createElement("h1");
+        dom.setAttribute(el1, "class", "welcome-screen");
+        var el2 = dom.createTextNode("Welcome to Free Time!");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes() {
+        return [];
+      },
+      statements: [],
+      locals: [],
+      templates: []
+    };
+  })());
 });
 define("dvdpwll.FreeTime-Front-End/initializers/active-model-adapter", ["exports", "active-model-adapter", "active-model-adapter/active-model-serializer"], function (exports, _activeModelAdapter, _activeModelAdapterActiveModelSerializer) {
   exports["default"] = {
@@ -8119,7 +8175,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dvdpwll.FreeTime-Front-End/app")["default"].create({"name":"dvdpwll.FreeTime-Front-End","version":"0.0.0+0075589b"});
+  require("dvdpwll.FreeTime-Front-End/app")["default"].create({"name":"dvdpwll.FreeTime-Front-End","version":"0.0.0+2ad0eec2"});
 }
 
 /* jshint ignore:end */

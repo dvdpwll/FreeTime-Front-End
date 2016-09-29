@@ -8779,3 +8779,11 @@ button.close {
 .user-forms {
   margin: auto;
   width: 50%; }
+
+.welcome-screen {
+  color: blue;
+  font-family: fantasy;
+  font-size: 70px;
+  margin: auto;
+  text-shadow: 4px 4px 5px grey;
+  text-align: center; }

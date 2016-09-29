@@ -633,6 +633,15 @@ define('dvdpwll.FreeTime-Front-End/tests/helpers/start-app.jshint', ['exports'],
     assert.ok(true, 'helpers/start-app.js should pass jshint.');
   });
 });
+define('dvdpwll.FreeTime-Front-End/tests/index/route.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - index/route.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'index/route.js should pass jshint.');
+  });
+});
 define('dvdpwll.FreeTime-Front-End/tests/initializers/text-field.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -3058,6 +3067,27 @@ define('dvdpwll.FreeTime-Front-End/tests/unit/change-password/route-test.jshint'
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/change-password/route-test.js should pass jshint.');
+  });
+});
+define('dvdpwll.FreeTime-Front-End/tests/unit/index/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:index', 'Unit | Route | index', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('dvdpwll.FreeTime-Front-End/tests/unit/index/route-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/index/route-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/index/route-test.js should pass jshint.');
   });
 });
 define('dvdpwll.FreeTime-Front-End/tests/unit/initializers/text-field-test', ['exports', 'ember', 'dvdpwll.FreeTime-Front-End/initializers/text-field', 'qunit'], function (exports, _ember, _dvdpwllFreeTimeFrontEndInitializersTextField, _qunit) {

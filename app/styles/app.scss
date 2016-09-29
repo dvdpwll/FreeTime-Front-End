@@ -6,3 +6,12 @@
 @import 'schedule';
 @import 'calendar';
 @import 'forms';
+
+.welcome-screen {
+  color: blue;
+  font-family: fantasy;
+  font-size: 70px;
+  margin: auto;
+  text-shadow: 4px 4px 5px grey;
+  text-align: center;
+}
