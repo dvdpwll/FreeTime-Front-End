@@ -8760,6 +8760,15 @@ button.close {
 .as-calendar-occurrence:hover .as-calendar-occurrence__remove {
   opacity: .65; }
 
+.as-calendar-occurrence__remove {
+  visibility: hidden; }
+
+.as-calendar-header__nav {
+  visibility: hidden; }
+
+.as-calendar-time-zone-select {
+  visibility: hidden; }
+
 .new-schedule-form > form {
   margin: auto;
   width: 50%; }
