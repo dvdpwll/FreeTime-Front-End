@@ -7,3 +7,15 @@
 
 @import 'addons/ember-calendar/paint-core';
 @import 'addons/ember-calendar/main';
+
+.as-calendar-occurrence__remove {
+  visibility: hidden;
+}
+
+.as-calendar-header__nav {
+  visibility: hidden;
+}
+
+.as-calendar-time-zone-select {
+  visibility: hidden;
+}

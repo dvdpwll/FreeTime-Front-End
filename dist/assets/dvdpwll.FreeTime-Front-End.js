@@ -544,7 +544,7 @@ define("dvdpwll.FreeTime-Front-End/components/calendar-grid/template", ["exports
         dom.insertBoundary(fragment, 0);
         return morphs;
       },
-      statements: [["inline", "as-calendar", [], ["title", "Ember Calendar", "occurrences", ["subexpr", "@mut", [["get", "occurrences", ["loc", [null, [4, 14], [4, 25]]]]], [], []], "defaultTimeZoneQuery", "New York|London|Dubai|Hong Kong", "dayStartingTime", "5:00", "dayEndingTime", "24:00", "timeSlotDuration", "00:30", "onAddOccurrence", ["subexpr", "action", ["calendarAddOccurrence"], [], ["loc", [null, [9, 18], [9, 50]]]], "onUpdateOccurrence", ["subexpr", "action", ["calendarUpdateOccurrence"], [], ["loc", [null, [10, 21], [10, 56]]]], "onRemoveOccurrence", ["subexpr", "action", ["calendarRemoveOccurrence"], [], ["loc", [null, [11, 21], [11, 56]]]]], ["loc", [null, [2, 0], [11, 58]]]]],
+      statements: [["inline", "as-calendar", [], ["title", "Weekly Calendar", "occurrences", ["subexpr", "@mut", [["get", "occurrences", ["loc", [null, [4, 14], [4, 25]]]]], [], []], "defaultTimeZoneQuery", "New York|London|Dubai|Hong Kong", "dayStartingTime", "5:00", "dayEndingTime", "24:00", "timeSlotDuration", "00:30", "onAddOccurrence", ["subexpr", "action", ["calendarAddOccurrence"], [], ["loc", [null, [9, 18], [9, 50]]]], "onUpdateOccurrence", ["subexpr", "action", ["calendarUpdateOccurrence"], [], ["loc", [null, [10, 21], [10, 56]]]], "onRemoveOccurrence", ["subexpr", "action", ["calendarRemoveOccurrence"], [], ["loc", [null, [11, 21], [11, 56]]]]], ["loc", [null, [2, 0], [11, 58]]]]],
       locals: [],
       templates: []
     };
