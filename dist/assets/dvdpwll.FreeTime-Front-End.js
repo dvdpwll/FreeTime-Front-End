@@ -6,9 +6,11 @@
 
 /* jshint ignore:end */
 
-define('dvdpwll.FreeTime-Front-End/ajax/service', ['exports', 'ember', 'ember-ajax/services/ajax', 'dvdpwll.FreeTime-Front-End/config/environment'], function (exports, _ember, _emberAjaxServicesAjax, _dvdpwllFreeTimeFrontEndConfigEnvironment) {
+define('dvdpwll.FreeTime-Front-End/ajax/service', ['exports', 'ember', 'ember-ajax/services/ajax'], function (exports, _ember, _emberAjaxServicesAjax) {
+  // import ENV from 'dvdpwll.FreeTime-Front-End/config/environment';
+
   exports['default'] = _emberAjaxServicesAjax['default'].extend({
-    host: _dvdpwllFreeTimeFrontEndConfigEnvironment['default'].apiHost,
+    // host: ENV.apiHost,
     auth: _ember['default'].inject.service(),
     headers: _ember['default'].computed('auth.credentials.token', {
       get: function get() {
@@ -39,9 +41,11 @@ define('dvdpwll.FreeTime-Front-End/app', ['exports', 'ember', 'dvdpwll.FreeTime-
 
   exports['default'] = App;
 });
-define('dvdpwll.FreeTime-Front-End/application/adapter', ['exports', 'ember', 'active-model-adapter', 'dvdpwll.FreeTime-Front-End/config/environment'], function (exports, _ember, _activeModelAdapter, _dvdpwllFreeTimeFrontEndConfigEnvironment) {
+define('dvdpwll.FreeTime-Front-End/application/adapter', ['exports', 'ember', 'active-model-adapter'], function (exports, _ember, _activeModelAdapter) {
+  // import ENV from 'dvdpwll.FreeTime-Front-End/config/environment';
+
   exports['default'] = _activeModelAdapter['default'].extend({
-    host: _dvdpwllFreeTimeFrontEndConfigEnvironment['default'].apiHost,
+    // host: ENV.apiHost,
     auth: _ember['default'].inject.service(),
 
     headers: _ember['default'].computed('auth.credentials.token', {
@@ -2034,7 +2038,7 @@ define("dvdpwll.FreeTime-Front-End/components/navbar-header/template", ["exports
 define('dvdpwll.FreeTime-Front-End/components/new-schedule-form/component', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     weekdays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    times: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
+    times: ['05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
     newSchedule: {
       title: null,
       day: 'Select Day',
@@ -2071,11 +2075,11 @@ define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exp
           "loc": {
             "source": null,
             "start": {
-              "line": 6,
+              "line": 7,
               "column": 2
             },
             "end": {
-              "line": 13,
+              "line": 14,
               "column": 3
             }
           },
@@ -2100,7 +2104,7 @@ define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exp
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["content", "name", ["loc", [null, [12, 5], [12, 13]]]]],
+        statements: [["content", "name", ["loc", [null, [13, 5], [13, 13]]]]],
         locals: ["name"],
         templates: []
       };
@@ -2113,11 +2117,11 @@ define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exp
           "loc": {
             "source": null,
             "start": {
-              "line": 15,
+              "line": 16,
               "column": 3
             },
             "end": {
-              "line": 22,
+              "line": 23,
               "column": 4
             }
           },
@@ -2142,7 +2146,7 @@ define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exp
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["content", "name", ["loc", [null, [21, 6], [21, 14]]]]],
+        statements: [["content", "name", ["loc", [null, [22, 6], [22, 14]]]]],
         locals: ["name"],
         templates: []
       };
@@ -2155,11 +2159,11 @@ define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exp
           "loc": {
             "source": null,
             "start": {
-              "line": 24,
+              "line": 25,
               "column": 4
             },
             "end": {
-              "line": 31,
+              "line": 32,
               "column": 5
             }
           },
@@ -2184,7 +2188,7 @@ define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exp
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["content", "name", ["loc", [null, [30, 7], [30, 15]]]]],
+        statements: [["content", "name", ["loc", [null, [31, 7], [31, 15]]]]],
         locals: ["name"],
         templates: []
       };
@@ -2192,8 +2196,8 @@ define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exp
     return {
       meta: {
         "fragmentReason": {
-          "name": "modifiers",
-          "modifiers": ["action"]
+          "name": "missing-wrapper",
+          "problems": ["multiple-nodes"]
         },
         "revision": "Ember@2.5.1",
         "loc": {
@@ -2203,7 +2207,7 @@ define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exp
             "column": 0
           },
           "end": {
-            "line": 35,
+            "line": 38,
             "column": 0
           }
         },
@@ -2215,6 +2219,13 @@ define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exp
       hasRendered: false,
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
+        var el1 = dom.createElement("h3");
+        dom.setAttribute(el1, "class", "new-schedule-item-header");
+        var el2 = dom.createTextNode("Add new schedule item");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
         var el1 = dom.createElement("form");
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
@@ -2261,10 +2272,18 @@ define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exp
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
+        var el1 = dom.createElement("br");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("hr");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var element0 = dom.childAt(fragment, [0]);
+        var element0 = dom.childAt(fragment, [2]);
         var morphs = new Array(5);
         morphs[0] = dom.createElementMorph(element0);
         morphs[1] = dom.createMorphAt(element0, 3, 3);
@@ -2273,7 +2292,7 @@ define("dvdpwll.FreeTime-Front-End/components/new-schedule-form/template", ["exp
         morphs[4] = dom.createMorphAt(element0, 15, 15);
         return morphs;
       },
-      statements: [["element", "action", ["createSchedule"], ["on", "submit"], ["loc", [null, [1, 6], [1, 45]]]], ["inline", "input", [], ["placeholder", "Title", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "newSchedule.title", ["loc", [null, [3, 69], [3, 86]]]]], [], []]], ["loc", [null, [3, 2], [3, 88]]]], ["block", "power-select", [], ["selected", ["subexpr", "@mut", [["get", "newSchedule.day", ["loc", [null, [7, 14], [7, 29]]]]], [], []], "options", ["subexpr", "@mut", [["get", "weekdays", ["loc", [null, [8, 13], [8, 21]]]]], [], []], "onchange", ["subexpr", "action", [["subexpr", "mut", [["get", "newSchedule.day", ["loc", [null, [9, 27], [9, 42]]]]], [], ["loc", [null, [9, 22], [9, 43]]]]], [], ["loc", [null, [9, 14], [9, 44]]]]], 0, null, ["loc", [null, [6, 2], [13, 20]]]], ["block", "power-select", [], ["selected", ["subexpr", "@mut", [["get", "newSchedule.start", ["loc", [null, [16, 15], [16, 32]]]]], [], []], "options", ["subexpr", "@mut", [["get", "times", ["loc", [null, [17, 14], [17, 19]]]]], [], []], "onchange", ["subexpr", "action", [["subexpr", "mut", [["get", "newSchedule.start", ["loc", [null, [18, 28], [18, 45]]]]], [], ["loc", [null, [18, 23], [18, 46]]]]], [], ["loc", [null, [18, 15], [18, 47]]]]], 1, null, ["loc", [null, [15, 3], [22, 21]]]], ["block", "power-select", [], ["selected", ["subexpr", "@mut", [["get", "newSchedule.end", ["loc", [null, [25, 16], [25, 31]]]]], [], []], "options", ["subexpr", "@mut", [["get", "times", ["loc", [null, [26, 15], [26, 20]]]]], [], []], "onchange", ["subexpr", "action", [["subexpr", "mut", [["get", "newSchedule.end", ["loc", [null, [27, 29], [27, 44]]]]], [], ["loc", [null, [27, 24], [27, 45]]]]], [], ["loc", [null, [27, 16], [27, 46]]]]], 2, null, ["loc", [null, [24, 4], [31, 22]]]]],
+      statements: [["element", "action", ["createSchedule"], ["on", "submit"], ["loc", [null, [2, 6], [2, 45]]]], ["inline", "input", [], ["placeholder", "Title", "class", "input-group form-control", "value", ["subexpr", "@mut", [["get", "newSchedule.title", ["loc", [null, [4, 69], [4, 86]]]]], [], []]], ["loc", [null, [4, 2], [4, 88]]]], ["block", "power-select", [], ["selected", ["subexpr", "@mut", [["get", "newSchedule.day", ["loc", [null, [8, 14], [8, 29]]]]], [], []], "options", ["subexpr", "@mut", [["get", "weekdays", ["loc", [null, [9, 13], [9, 21]]]]], [], []], "onchange", ["subexpr", "action", [["subexpr", "mut", [["get", "newSchedule.day", ["loc", [null, [10, 27], [10, 42]]]]], [], ["loc", [null, [10, 22], [10, 43]]]]], [], ["loc", [null, [10, 14], [10, 44]]]]], 0, null, ["loc", [null, [7, 2], [14, 20]]]], ["block", "power-select", [], ["selected", ["subexpr", "@mut", [["get", "newSchedule.start", ["loc", [null, [17, 15], [17, 32]]]]], [], []], "options", ["subexpr", "@mut", [["get", "times", ["loc", [null, [18, 14], [18, 19]]]]], [], []], "onchange", ["subexpr", "action", [["subexpr", "mut", [["get", "newSchedule.start", ["loc", [null, [19, 28], [19, 45]]]]], [], ["loc", [null, [19, 23], [19, 46]]]]], [], ["loc", [null, [19, 15], [19, 47]]]]], 1, null, ["loc", [null, [16, 3], [23, 21]]]], ["block", "power-select", [], ["selected", ["subexpr", "@mut", [["get", "newSchedule.end", ["loc", [null, [26, 16], [26, 31]]]]], [], []], "options", ["subexpr", "@mut", [["get", "times", ["loc", [null, [27, 15], [27, 20]]]]], [], []], "onchange", ["subexpr", "action", [["subexpr", "mut", [["get", "newSchedule.end", ["loc", [null, [28, 29], [28, 44]]]]], [], ["loc", [null, [28, 24], [28, 45]]]]], [], ["loc", [null, [28, 16], [28, 46]]]]], 2, null, ["loc", [null, [25, 4], [32, 22]]]]],
       locals: [],
       templates: [child0, child1, child2]
     };
@@ -2545,7 +2564,7 @@ define("dvdpwll.FreeTime-Front-End/components/schedule-card/template", ["exports
 define('dvdpwll.FreeTime-Front-End/components/schedule-list/component', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     classNameBindings: ['scheduleHidden'],
-    scheduleHidden: true,
+    scheduleHidden: false,
     actions: {
       toggleListDetail: function toggleListDetail() {
         return this.toggleProperty('scheduleHidden');
@@ -2556,7 +2575,7 @@ define('dvdpwll.FreeTime-Front-End/components/schedule-list/component', ['export
 define('dvdpwll.FreeTime-Front-End/components/schedule-list/edit/component', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     weekdays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    times: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
+    times: ['05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
     classNameBindings: ['newScheduleForm'],
     newScheduleForm: true,
     actions: {
@@ -2786,7 +2805,7 @@ define("dvdpwll.FreeTime-Front-End/components/schedule-list/template", ["exports
       meta: {
         "fragmentReason": {
           "name": "missing-wrapper",
-          "problems": ["multiple-nodes"]
+          "problems": ["wrong-type", "multiple-nodes"]
         },
         "revision": "Ember@2.5.1",
         "loc": {
@@ -2796,7 +2815,7 @@ define("dvdpwll.FreeTime-Front-End/components/schedule-list/template", ["exports
             "column": 0
           },
           "end": {
-            "line": 9,
+            "line": 10,
             "column": 0
           }
         },
@@ -2808,14 +2827,20 @@ define("dvdpwll.FreeTime-Front-End/components/schedule-list/template", ["exports
       hasRendered: false,
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
-        var el1 = dom.createElement("h3");
-        dom.setAttribute(el1, "class", "schedule-header");
+        var el1 = dom.createComment(" <h3 class=\"schedule-header\" {{action 'toggleListDetail'}}>{{schedule.title}}</h3> ");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("a");
+        dom.setAttribute(el1, "href", "#");
+        dom.setAttribute(el1, "class", "schedule-header schedule-title");
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
         var el1 = dom.createElement("ul");
+        dom.setAttribute(el1, "class", "schedule-list");
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("li");
@@ -2846,8 +2871,8 @@ define("dvdpwll.FreeTime-Front-End/components/schedule-list/template", ["exports
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var element0 = dom.childAt(fragment, [0]);
-        var element1 = dom.childAt(fragment, [2]);
+        var element0 = dom.childAt(fragment, [2]);
+        var element1 = dom.childAt(fragment, [4]);
         var morphs = new Array(5);
         morphs[0] = dom.createElementMorph(element0);
         morphs[1] = dom.createMorphAt(element0, 0, 0);
@@ -2856,7 +2881,7 @@ define("dvdpwll.FreeTime-Front-End/components/schedule-list/template", ["exports
         morphs[4] = dom.createMorphAt(dom.childAt(element1, [5]), 0, 0);
         return morphs;
       },
-      statements: [["element", "action", ["toggleListDetail"], [], ["loc", [null, [1, 28], [1, 57]]]], ["content", "schedule.title", ["loc", [null, [1, 58], [1, 76]]]], ["content", "schedule.day", ["loc", [null, [3, 6], [3, 22]]]], ["content", "schedule.start", ["loc", [null, [4, 6], [4, 24]]]], ["content", "schedule.end", ["loc", [null, [5, 6], [5, 22]]]]],
+      statements: [["element", "action", ["toggleListDetail"], [], ["loc", [null, [2, 51], [2, 80]]]], ["content", "schedule.title", ["loc", [null, [2, 81], [2, 99]]]], ["content", "schedule.day", ["loc", [null, [4, 6], [4, 22]]]], ["content", "schedule.start", ["loc", [null, [5, 6], [5, 24]]]], ["content", "schedule.end", ["loc", [null, [6, 6], [6, 22]]]]],
       locals: [],
       templates: []
     };
@@ -3268,7 +3293,8 @@ define("dvdpwll.FreeTime-Front-End/index/template", ["exports"], function (expor
     return {
       meta: {
         "fragmentReason": {
-          "name": "triple-curlies"
+          "name": "missing-wrapper",
+          "problems": ["multiple-nodes"]
         },
         "revision": "Ember@2.5.1",
         "loc": {
@@ -3278,7 +3304,7 @@ define("dvdpwll.FreeTime-Front-End/index/template", ["exports"], function (expor
             "column": 0
           },
           "end": {
-            "line": 2,
+            "line": 3,
             "column": 0
           }
         },
@@ -3292,7 +3318,14 @@ define("dvdpwll.FreeTime-Front-End/index/template", ["exports"], function (expor
         var el0 = dom.createDocumentFragment();
         var el1 = dom.createElement("h1");
         dom.setAttribute(el1, "class", "welcome-screen");
-        var el2 = dom.createTextNode("Welcome to Free Time!");
+        var el2 = dom.createTextNode("Welcome to FreeTime!");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("h4");
+        dom.setAttribute(el1, "class", "welcome-subtext");
+        var el2 = dom.createTextNode("Use FreeTime to see your schedule.");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
@@ -8051,11 +8084,11 @@ define("dvdpwll.FreeTime-Front-End/users/template", ["exports"], function (expor
             "source": null,
             "start": {
               "line": 4,
-              "column": 0
+              "column": 2
             },
             "end": {
               "line": 6,
-              "column": 0
+              "column": 2
             }
           },
           "moduleName": "dvdpwll.FreeTime-Front-End/users/template.hbs"
@@ -8066,7 +8099,7 @@ define("dvdpwll.FreeTime-Front-End/users/template", ["exports"], function (expor
         hasRendered: false,
         buildFragment: function buildFragment(dom) {
           var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("  ");
+          var el1 = dom.createTextNode("    ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("li");
           var el2 = dom.createComment("");
@@ -8081,7 +8114,7 @@ define("dvdpwll.FreeTime-Front-End/users/template", ["exports"], function (expor
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
           return morphs;
         },
-        statements: [["content", "user.email", ["loc", [null, [5, 6], [5, 20]]]]],
+        statements: [["content", "user.email", ["loc", [null, [5, 8], [5, 22]]]]],
         locals: ["user"],
         templates: []
       };
@@ -8119,6 +8152,7 @@ define("dvdpwll.FreeTime-Front-End/users/template", ["exports"], function (expor
         var el1 = dom.createTextNode("\n\n");
         dom.appendChild(el0, el1);
         var el1 = dom.createElement("ul");
+        dom.setAttribute(el1, "class", "user-list");
         var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
@@ -8133,7 +8167,7 @@ define("dvdpwll.FreeTime-Front-End/users/template", ["exports"], function (expor
         morphs[0] = dom.createMorphAt(dom.childAt(fragment, [2]), 1, 1);
         return morphs;
       },
-      statements: [["block", "each", [["get", "model", ["loc", [null, [4, 8], [4, 13]]]]], [], 0, null, ["loc", [null, [4, 0], [6, 9]]]]],
+      statements: [["block", "each", [["get", "model", ["loc", [null, [4, 10], [4, 15]]]]], [], 0, null, ["loc", [null, [4, 2], [6, 11]]]]],
       locals: [],
       templates: [child0]
     };
@@ -8171,7 +8205,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dvdpwll.FreeTime-Front-End/app")["default"].create({"name":"dvdpwll.FreeTime-Front-End","version":"0.0.0+7a8fcd38"});
+  require("dvdpwll.FreeTime-Front-End/app")["default"].create({"name":"dvdpwll.FreeTime-Front-End","version":"0.0.0+0dea4750"});
 }
 
 /* jshint ignore:end */

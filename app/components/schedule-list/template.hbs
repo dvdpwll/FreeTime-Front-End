@@ -1,5 +1,6 @@
-<h3 class="schedule-header" {{action 'toggleListDetail'}}>{{schedule.title}}</h3>
-<ul>
+<!-- <h3 class="schedule-header" {{action 'toggleListDetail'}}>{{schedule.title}}</h3> -->
+<a href="#" class="schedule-header schedule-title" {{action 'toggleListDetail'}}>{{schedule.title}}</a>
+<ul class='schedule-list'>
   <li>{{schedule.day}}</li>
   <li>{{schedule.start}}</li>
   <li>{{schedule.end}}</li>

@@ -4,5 +4,26 @@
 
 .schedule-card {
   float: left;
+  padding-top: 20px;
   width: 25%;
+}
+
+.schedule-title {
+  color: #0099cc;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.schedule-title:hover {
+   color: orange;
+   text-decoration: none;
+}
+
+.schedule-title:link {
+   text-decoration: none;
+}
+
+.schedule-list {
+  list-style-type: none;
+  padding: 0px;
 }

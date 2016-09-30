@@ -8,10 +8,22 @@
 @import 'forms';
 
 .welcome-screen {
-  color: blue;
-  font-family: fantasy;
+  color: #0099cc;
+  font-family: sans-serif;
   font-size: 70px;
   margin: auto;
-  text-shadow: 4px 4px 5px grey;
+  padding-top: 150px;
   text-align: center;
+}
+
+.welcome-subtext {
+  color: gray;
+  font-family: sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+.user-list {
+  // list-style-type: none;
+  padding-left: 20px;
 }
