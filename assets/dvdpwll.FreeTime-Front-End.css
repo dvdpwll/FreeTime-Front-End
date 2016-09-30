@@ -6465,7 +6465,24 @@ button.close {
 
 .schedule-card {
   float: left;
+  padding-top: 20px;
   width: 25%; }
+
+.schedule-title {
+  color: #0099cc;
+  text-decoration: none;
+  font-size: 30px; }
+
+.schedule-title:hover {
+  color: orange;
+  text-decoration: none; }
+
+.schedule-title:link {
+  text-decoration: none; }
+
+.schedule-list {
+  list-style-type: none;
+  padding: 0px; }
 
 /* FONT PATH
  * -------------------------- */
@@ -8789,10 +8806,25 @@ button.close {
   margin: auto;
   width: 50%; }
 
+.new-schedule-item-header {
+  text-align: center; }
+
+hr {
+  border-color: #cccccc; }
+
 .welcome-screen {
-  color: blue;
-  font-family: fantasy;
+  color: #0099cc;
+  font-family: sans-serif;
   font-size: 70px;
   margin: auto;
-  text-shadow: 4px 4px 5px grey;
+  padding-top: 150px;
   text-align: center; }
+
+.welcome-subtext {
+  color: gray;
+  font-family: sans-serif;
+  font-size: 24px;
+  text-align: center; }
+
+.user-list {
+  padding-left: 20px; }
