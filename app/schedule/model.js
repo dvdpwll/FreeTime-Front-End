@@ -60,7 +60,7 @@ export default DS.Model.extend({
     let month = split[1];
     let day = split[2];
 
-    return `${weekday} ${month} ${day} 2016 ${this.get('start')}:00 GMT-400 (EDT)`;
+    return `${weekday} ${month} ${day} 2017 ${this.get('start')}:00 GMT-400 (EDT)`;
   }),
   endsAt: Ember.computed('day', 'end', function() {
     //calendar constants, i dont account for leap year
@@ -114,7 +114,7 @@ export default DS.Model.extend({
     let month = split[1];
     let day = split[2];
 
-    return `${weekday} ${month} ${day} 2016 ${this.get('end')}:00 GMT-400 (EDT)`;
+    return `${weekday} ${month} ${day} 2017 ${this.get('end')}:00 GMT-400 (EDT)`;
   }),
 });
 
