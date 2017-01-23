@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 .ember-basic-dropdown {
   position: relative; }
 
@@ -8813,18 +8814,76 @@ hr {
   border-color: #cccccc; }
 
 .welcome-screen {
-  color: #0099cc;
-  font-family: sans-serif;
-  font-size: 70px;
+  color: #65c3d5;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  font-size: 40px;
   margin: auto;
   padding-top: 150px;
   text-align: center; }
 
 .welcome-subtext {
   color: gray;
-  font-family: sans-serif;
-  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 2px; }
+
+.welcome-instructions {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: gray;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 13px; }
+
+.img1 {
+  display: block;
+  margin: auto; }
+
+.section-blue {
+  overflow: auto;
+  background-color: #65c3d5;
+  width: 100%;
+  height: 350px;
+  color: white;
   text-align: center; }
+
+.section-white {
+  overflow: auto;
+  width: 100%;
+  height: 350px;
+  text-align: center; }
+
+.sub-section {
+  width: 400px;
+  display: inline-block;
+  height: 250px;
+  margin-top: 25px; }
+
+.sub-section-image {
+  margin-right: 50px; }
+
+.sub-section-image > img {
+  width: 400px;
+  height: 250px;
+  box-shadow: 2px 2px 15px #888888; }
+
+.sub-section-text {
+  margin-right: 50px; }
+
+.sub-section-text > h4 {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: left;
+  font-weight: bold;
+  font-size: 22px;
+  padding-top: 50px; }
+
+.sub-section-text > p {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: left;
+  font-size: 16px;
+  padding-right: 50px; }
 
 .user-list {
   padding-left: 20px; }
