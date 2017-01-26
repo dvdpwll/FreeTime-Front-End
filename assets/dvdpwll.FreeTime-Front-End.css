@@ -8819,7 +8819,7 @@ hr {
   font-weight: bold;
   font-size: 40px;
   margin: auto;
-  padding-top: 150px;
+  padding-top: 75px;
   text-align: center; }
 
 .welcome-subtext {
@@ -8887,3 +8887,7 @@ hr {
 
 .user-list {
   padding-left: 20px; }
+
+footer {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center; }

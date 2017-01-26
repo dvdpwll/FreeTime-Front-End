@@ -3299,7 +3299,7 @@ define("dvdpwll.FreeTime-Front-End/index/template", ["exports"], function (expor
             "column": 0
           },
           "end": {
-            "line": 49,
+            "line": 53,
             "column": 0
           }
         },
@@ -3488,6 +3488,32 @@ define("dvdpwll.FreeTime-Front-End/index/template", ["exports"], function (expor
         dom.setAttribute(el3, "alt", "");
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("footer");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("p");
+        var el3 = dom.createTextNode("2017 © David Powell - ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("a");
+        dom.setAttribute(el3, "href", "https://github.com/dvdpwll/FreeTime-Front-End");
+        dom.setAttribute(el3, "target", "_blank");
+        var el4 = dom.createTextNode("Github Front End");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode(" - ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("a");
+        dom.setAttribute(el3, "href", "https://github.com/dvdpwll/FreeTime-Back-End");
+        dom.setAttribute(el3, "target", "_blank");
+        var el4 = dom.createTextNode("Github Back End");
+        dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
