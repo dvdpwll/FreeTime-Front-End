@@ -6,11 +6,9 @@
 
 /* jshint ignore:end */
 
-define('dvdpwll.FreeTime-Front-End/ajax/service', ['exports', 'ember', 'ember-ajax/services/ajax'], function (exports, _ember, _emberAjaxServicesAjax) {
-  // import ENV from 'dvdpwll.FreeTime-Front-End/config/environment';
-
+define('dvdpwll.FreeTime-Front-End/ajax/service', ['exports', 'ember', 'ember-ajax/services/ajax', 'dvdpwll.FreeTime-Front-End/config/environment'], function (exports, _ember, _emberAjaxServicesAjax, _dvdpwllFreeTimeFrontEndConfigEnvironment) {
   exports['default'] = _emberAjaxServicesAjax['default'].extend({
-    // host: ENV.apiHost,
+    host: _dvdpwllFreeTimeFrontEndConfigEnvironment['default'].apiHost,
     auth: _ember['default'].inject.service(),
     headers: _ember['default'].computed('auth.credentials.token', {
       get: function get() {
@@ -41,11 +39,9 @@ define('dvdpwll.FreeTime-Front-End/app', ['exports', 'ember', 'dvdpwll.FreeTime-
 
   exports['default'] = App;
 });
-define('dvdpwll.FreeTime-Front-End/application/adapter', ['exports', 'ember', 'active-model-adapter'], function (exports, _ember, _activeModelAdapter) {
-  // import ENV from 'dvdpwll.FreeTime-Front-End/config/environment';
-
+define('dvdpwll.FreeTime-Front-End/application/adapter', ['exports', 'ember', 'active-model-adapter', 'dvdpwll.FreeTime-Front-End/config/environment'], function (exports, _ember, _activeModelAdapter, _dvdpwllFreeTimeFrontEndConfigEnvironment) {
   exports['default'] = _activeModelAdapter['default'].extend({
-    // host: ENV.apiHost,
+    host: _dvdpwllFreeTimeFrontEndConfigEnvironment['default'].apiHost,
     auth: _ember['default'].inject.service(),
 
     headers: _ember['default'].computed('auth.credentials.token', {
@@ -1913,7 +1909,6 @@ define("dvdpwll.FreeTime-Front-End/components/my-application/template", ["export
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
         var el1 = dom.createElement("div");
-        dom.setAttribute(el1, "class", "col-md-8 col-md-offset-2");
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
@@ -3304,7 +3299,7 @@ define("dvdpwll.FreeTime-Front-End/index/template", ["exports"], function (expor
             "column": 0
           },
           "end": {
-            "line": 3,
+            "line": 49,
             "column": 0
           }
         },
@@ -3316,16 +3311,186 @@ define("dvdpwll.FreeTime-Front-End/index/template", ["exports"], function (expor
       hasRendered: false,
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
-        var el1 = dom.createElement("h1");
+        var el1 = dom.createElement("p");
         dom.setAttribute(el1, "class", "welcome-screen");
-        var el2 = dom.createTextNode("Welcome to FreeTime!");
+        var el2 = dom.createTextNode("FreeTime is a simple schedule keeper");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
-        var el1 = dom.createElement("h4");
+        var el1 = dom.createElement("p");
         dom.setAttribute(el1, "class", "welcome-subtext");
-        var el2 = dom.createTextNode("Use FreeTime to see your schedule.");
+        var el2 = dom.createTextNode("A CODING EXERCISE USING EMBER.JS AND RUBY ON RAILS");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("p");
+        dom.setAttribute(el1, "class", "welcome-instructions");
+        var el2 = dom.createTextNode("Read below for an overview of the web app's functionality");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("img");
+        dom.setAttribute(el1, "class", "img1");
+        dom.setAttribute(el1, "src", "assets/images/freetime_screenshot_calendar.png");
+        dom.setAttribute(el1, "alt", "");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "class", "section-blue");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "sub-section sub-section-image left");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("img");
+        dom.setAttribute(el3, "src", "assets/images/freetime_signup.png");
+        dom.setAttribute(el3, "alt", "");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "sub-section sub-section-text right");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("h4");
+        var el4 = dom.createTextNode("Getting Started");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("p");
+        var el4 = dom.createTextNode("Users create a login by entering an email address and password. Once signed in, they can start entering schedule information to fill up their calendar.");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "class", "section-white");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "sub-section sub-section-text left");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("h4");
+        var el4 = dom.createTextNode("Adding a Schedule Item");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("p");
+        var el4 = dom.createTextNode("Under \"My Schedule\", users can enter new schedule items by typing a title and selecting a day and time values from the dropdown menus.");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "sub-section sub-section-image right");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("img");
+        dom.setAttribute(el3, "src", "assets/images/freetime_add_schedule.png");
+        dom.setAttribute(el3, "alt", "");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "class", "section-blue");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "sub-section sub-section-image left");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("img");
+        dom.setAttribute(el3, "src", "assets/images/freetime_calendar.png");
+        dom.setAttribute(el3, "alt", "");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "sub-section sub-section-text right");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("h4");
+        var el4 = dom.createTextNode("Viewing the Calendar");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("p");
+        var el4 = dom.createTextNode("Clicking \"Calendar\" on the navigation brings up the calendar view and displays the entered schedule information.");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "class", "section-white");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "sub-section sub-section-text left");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("h4");
+        var el4 = dom.createTextNode("Making Edits");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("p");
+        var el4 = dom.createTextNode("Under \"My Schedule\", users can additionally edit previously entered items or choose to delete them.");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "sub-section sub-section-image right");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("img");
+        dom.setAttribute(el3, "src", "assets/images/freetime_schedule_edits.png");
+        dom.setAttribute(el3, "alt", "");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
@@ -3929,7 +4094,7 @@ define('dvdpwll.FreeTime-Front-End/schedule/model', ['exports', 'ember-data'], f
       var month = split[1];
       var day = split[2];
 
-      return weekday + ' ' + month + ' ' + day + ' 2016 ' + this.get('start') + ':00 GMT-400 (EDT)';
+      return weekday + ' ' + month + ' ' + day + ' 2017 ' + this.get('start') + ':00 GMT-400 (EDT)';
     }),
     endsAt: Ember.computed('day', 'end', function () {
       //calendar constants, i dont account for leap year
@@ -3983,7 +4148,7 @@ define('dvdpwll.FreeTime-Front-End/schedule/model', ['exports', 'ember-data'], f
       var month = split[1];
       var day = split[2];
 
-      return weekday + ' ' + month + ' ' + day + ' 2016 ' + this.get('end') + ':00 GMT-400 (EDT)';
+      return weekday + ' ' + month + ' ' + day + ' 2017 ' + this.get('end') + ':00 GMT-400 (EDT)';
     })
   });
 
@@ -8205,7 +8370,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dvdpwll.FreeTime-Front-End/app")["default"].create({"name":"dvdpwll.FreeTime-Front-End","version":"0.0.0+0dea4750"});
+  require("dvdpwll.FreeTime-Front-End/app")["default"].create({"name":"dvdpwll.FreeTime-Front-End","version":"0.0.0+935a72f8"});
 }
 
 /* jshint ignore:end */
